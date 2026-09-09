@@ -603,9 +603,47 @@ function initMobileMenu() {
   });
 
   nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
       nav.classList.remove('open');
       toggle.classList.remove('active');
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      const isCurrentPage = href === currentPath || href === `./${currentPath}` || (currentPath === 'index.html' && (href === './' || href === 'index.html'));
+
+      if (isCurrentPage) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Global smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#' || targetId === '#top') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      try {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (err) {
+        // Fallback for non-standard selector
+      }
     });
   });
 }

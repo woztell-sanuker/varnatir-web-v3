@@ -269,7 +269,7 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  gap: clamp(10px, 1.4vw, 24px);
+  gap: 0;
 }
 .brand-logo {
   display: flex;
@@ -277,11 +277,13 @@ button {
   gap: 12px;
   font-family: var(--font-brand);
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   letter-spacing: 0.08em;
   color: var(--text);
   text-decoration: none;
   transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  margin-right: clamp(14px, 1.8vw, 28px);
 }
 .brand-logo:hover {
   opacity: 0.95;
@@ -311,19 +313,20 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(8px, 1.15vw, 20px);
-  flex: 1;
+  gap: clamp(8px, 1.1vw, 18px);
+  flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
 }
 .nav-link {
-  font-size: clamp(0.8rem, 0.86vw, 0.88rem);
+  font-size: clamp(0.78rem, 0.84vw, 0.88rem);
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
   padding: 6px 0;
   white-space: nowrap;
   flex-shrink: 0;
+  letter-spacing: -0.01em;
 }
 .nav-link::after {
   content: '';
@@ -347,13 +350,43 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: clamp(6px, 0.9vw, 12px);
+  gap: clamp(8px, 1vw, 12px);
   flex-shrink: 0;
+  margin-left: clamp(14px, 1.8vw, 28px);
+}
+@media (min-width: 1081px) and (max-width: 1220px) {
+  .brand-logo {
+    font-size: 1.18rem;
+    gap: 8px;
+    margin-right: 10px;
+  }
+  .main-nav {
+    gap: 7px;
+  }
+  .nav-link {
+    font-size: 0.77rem;
+  }
+  .header-actions {
+    margin-left: 10px;
+    gap: 6px;
+  }
+  .header-actions .btn {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+  }
 }
 @media (max-width: 1240px) {
   .header-actions .btn-ghost {
     display: none;
   }
+}
+/* Smooth anchor target offset accounting for sticky header */
+:target,
+section[id],
+div[id].section-container,
+.section-container[id],
+.hero-section[id] {
+  scroll-margin-top: 84px;
 }
 .lang-switcher {
   display: inline-flex;
@@ -1704,7 +1737,7 @@ button {
   .diagram-canvas-svg { min-width: 750px; }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   .header-actions {
     display: flex;
     align-items: center;
@@ -1730,15 +1763,19 @@ button {
     flex-direction: column;
     position: fixed;
     inset: 0;
-    background: rgba(7, 9, 14, 0.98);
+    background: rgba(7, 9, 14, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 1050;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    padding: 32px;
+    gap: clamp(16px, 2.8vh, 26px);
+    padding: 80px 24px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .main-nav.open .nav-link {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3.8vw, 1.6rem);
     font-family: var(--font-display);
     font-weight: 700;
   }
