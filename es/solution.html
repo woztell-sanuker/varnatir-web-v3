@@ -27,7 +27,7 @@
     <div class="container top-bar-content">
       <span class="pulse-dot"></span>
       <span class="top-bar-text">Fundamento científico CIBEC 2023: <strong>Gobernar la conversación, no el canal</strong></span>
-      <a href="../catedra.html" class="top-bar-link">Ver investigación &rarr;</a>
+      <a href="catedra.html" class="top-bar-link">Ver investigación &rarr;</a>
     </div>
   </div>
 
@@ -215,12 +215,12 @@
           <span class="badge-deploy">Cloud / SaaS</span>
           <h4 style="font-size: 1.4rem; margin: 12px 0;">VARNATIR Cloud</h4>
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            Alojamiento en infraestructura europea conforme a RGPD y ENS Media. Multi-organización con unidad de aislamiento estricta por cliente. Activación en 24 horas.
+            Alojamiento en infraestructura europea conforme a RGPD y ENS Media. Multi-organización con unidad de aislamiento estricta por cliente. Activación de sandbox de producción en 48 horas.
           </p>
           <ul class="pricing-features" style="margin-bottom: 24px; font-size: 0.85rem;">
             <li>✓ Aislamiento lógico de datos y claves</li>
             <li>✓ Actualizaciones de políticas y filtros automáticos</li>
-            <li>✓ SLA 99.9% de disponibilidad</li>
+            <li>✓ SLA 99.9% de disponibilidad (99.99% en Dedicado)</li>
           </ul>
           <button class="btn btn-secondary btn-block" onclick="openModal('Cloud SaaS')">Solicitar acceso Cloud</button>
         </div>
@@ -256,6 +256,54 @@
     </div>
   </section>
 
+  <!-- Documentación de API e Interoperabilidad Soberana -->
+  <section class="section-container" id="api">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker text-accent">APIS DE INTEGRACIÓN Y GOBERNANZA</span>
+        <h2 class="section-h2">API Universal de Control de Vuelo In-Flight</h2>
+        <p class="section-lead">
+          Conecta tus sistemas centrales, CRMs, módulos HSM y proveedores de LLM mediante endpoints REST de latencia sub-3ms y webhooks de auditoría cualificada RFC 3161.
+        </p>
+      </div>
+
+      <div class="split-layout">
+        <div class="split-copy">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px; color: var(--text);">Interoperabilidad Corporativa sin Fricción</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+            VARNATIR expone especificaciones conformes con OpenAPI 3.1 que permiten la ingesta de conversaciones transaccionales, validación criptográfica bidireccional de eventos y evaluación preventiva de políticas en tiempo real.
+          </p>
+          <ul class="pricing-features" style="margin-bottom: 24px;">
+            <li>✓ <strong>Garantía de latencia &lt;3ms:</strong> Procesamiento en memoria en la frontera de gateway con el operador.</li>
+            <li>✓ <strong>Webhooks cualificados RFC 3161:</strong> Envío de sellos de raíz Merkle directamente hacia tu SIEM/SOC.</li>
+            <li>✓ <strong>Interconexión HSM nativa:</strong> Soporte PKCS#11 y KMS soberanos (AWS, Azure Key Vault, Google Cloud KMS).</li>
+          </ul>
+          <div>
+            <button class="btn btn-secondary" onclick="openModal('Especificaciones API')">Solicitar Especificaciones de API &rarr;</button>
+          </div>
+        </div>
+
+        <div class="split-visual">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="terminal-dots-wrap">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <span class="terminal-title">curl -X POST https://api.varnatir.internal/v1/govern/intercept</span>
+            </div>
+            <div class="terminal-body" style="font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6;">
+              <div class="t-line"><span class="t-ts">Headers:</span> <span class="t-tag accent">Authorization: Bearer vnt_sec_9f8...</span></div>
+              <div class="t-line"><span class="t-ts">Payload:</span> {"session_id": "0x4a9b", "carrier": "whatsapp", "in_flight": true}</div>
+              <div class="t-line highlight"><span class="t-tag success">&larr; HTTP 200 OK</span> <span style="color: var(--accent);">{"verdict": "ALLOW", "policy_eval_ms": 1.84, "pii_masked": 2, "merkle_leaf": "0x7c3..."}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta-banner-section">
     <div class="container">
@@ -265,8 +313,11 @@
         <p class="cta-subhead">Desbloquea el canal donde ya operan tus clientes con la certeza técnica que exigen tu DPO y tu CISO.</p>
         <div class="cta-buttons">
           <button class="btn btn-primary btn-lg" onclick="openModal('CTA Solución')">Desbloquear un flujo sensible</button>
-          <a href="../ia.html" class="btn btn-ghost btn-lg">Ver arquitectura de IA &rarr;</a>
+          <a href="ia.html" class="btn btn-ghost btn-lg">Ver arquitectura de IA &rarr;</a>
         </div>
+      </div>
+    </div>
+  </section>
       </div>
     </div>
   </section>

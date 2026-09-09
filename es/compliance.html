@@ -26,7 +26,7 @@
     <div class="container top-bar-content">
       <span class="pulse-dot"></span>
       <span class="top-bar-text">Fundamento científico CIBEC 2023: <strong>Gobernar la conversación, no el canal</strong></span>
-      <a href="../catedra.html" class="top-bar-link">Ver investigación &rarr;</a>
+      <a href="catedra.html" class="top-bar-link">Ver investigación &rarr;</a>
     </div>
   </div>
 
@@ -94,7 +94,7 @@
     </div>
   </section>
 
-  <!-- Marco ENS Media -->
+  <!-- Marco ENS Media & Seguridad Institucional CISO -->
   <section class="section-container bg-surface-alt">
     <div class="container">
       <div class="split-layout">
@@ -102,36 +102,41 @@
           <span class="section-kicker text-accent">SEGURIDAD NACIONAL &amp; SECTOR PÚBLICO</span>
           <h2 class="section-h2">Diseñado conforme al Esquema Nacional de Seguridad (ENS Media)</h2>
           <p class="section-lead">
-            El marco de referencia para Administraciones Públicas y sus proveedores tecnológicos en España. La arquitectura de VARNATIR implementa los principios de control exigidos por el Real Decreto 311/2022.
+            El marco de referencia para Administraciones Públicas, entidades financieras y operadores de infraestructuras críticas en España. La arquitectura de VARNATIR implementa los principios de control operacional exigidos por el Real Decreto 311/2022.
           </p>
           <ul class="feature-bullets">
             <li>
-              <strong>Unidad de aislamiento estricta:</strong> Cada organización cuenta con su propio perímetro lógico de aislamiento. Cero riesgo de contaminación de datos o accesos cruzados.
+              <strong>Unidad de aislamiento estricta:</strong> Cada organización cuenta con su propio perímetro lógico de aislamiento. Cero riesgo de contaminación de datos o accesos cruzados entre clientes.
             </li>
             <li>
-              <strong>Cifrado extremo a extremo gestionado por backend:</strong> Los mensajes viajan cifrados en tránsito (TLS 1.3) y residen cifrados en reposo (AES-256) con clave segregada por organización.
+              <strong>Cifrado extremo a extremo gestionado por backend:</strong> Los mensajes viajan cifrados en tránsito (TLS 1.3 con secreto perfecto hacia adelante) y residen cifrados en reposo (AES-256-GCM) con clave segregada por organización.
             </li>
             <li>
-              <strong>Trazabilidad y registro de eventos:</strong> Cada intervención de moderación, anonimización o salto a canal efímero queda registrada en un log inmutable para auditorías de cumplimiento.
+              <strong>Trazabilidad probatoria inmutable RFC 3161:</strong> Cada intervención de moderación, anonimización o salto a canal efímero queda sellada en un árbol Merkle para auditorías judiciales y administrativas.
             </li>
           </ul>
         </div>
 
         <div class="split-visual">
           <div class="terminal-card" style="padding: 32px 28px;">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-              <span style="font-size: 2rem;">🏛️</span>
+            <div class="gov-emblem-wrap">
+              <svg class="gov-emblem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
               <div>
-                <h4 style="font-size: 1.2rem; color: var(--text);">Declaración de Conformidad</h4>
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);">RD 311/2022 · Categoría MEDIA</div>
+                <h4 style="font-size: 1.2rem; color: var(--text); margin: 0 0 4px;">Declaración de Conformidad</h4>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em;">RD 311/2022 · CATEGORÍA MEDIA ENS</div>
               </div>
             </div>
             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
               Los controles de autenticación, integridad, trazabilidad y confidencialidad se aplican sobre la conversación antes de que el mensaje se entregue a la red pública o al terminal del ciudadano.
             </p>
-            <div style="font-family: var(--font-mono); font-size: 0.78rem; background: var(--bg); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-              Estado: Diseñado conforme a ENS Media.<br />
-              Auditabilidad: Por interacción y evento.
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; background: var(--bg); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <div style="color: var(--accent); margin-bottom: 4px;">✓ PERFIL AUDITABLE: ENS-MEDIA-2026</div>
+              <div style="color: var(--text-muted);">Perímetro: VPC Aislada Dedicada</div>
+              <div style="color: var(--text-muted);">Custodia Criptográfica: HSM Cliente / BYOK</div>
+              <div style="color: var(--text);">Auditabilidad: Prueba Merkle por interacción</div>
             </div>
           </div>
         </div>
@@ -139,115 +144,417 @@
     </div>
   </section>
 
-  <!-- DORA & RGPD -->
+  <!-- Topología Arquitectónica Zero-Trust CISO -->
   <section class="section-container">
     <div class="container">
       <div class="section-header">
-        <span class="section-kicker">REGULACIONES FINANCIERAS Y DE PRIVACIDAD</span>
-        <h2 class="section-h2">Resiliencia operativa DORA y privacidad RGPD</h2>
+        <span class="section-kicker text-accent">TOPOLOGÍA CONVERSACIONAL ZERO-TRUST</span>
+        <h2 class="section-h2">Perímetro de Intervención Arquitectónica</h2>
         <p class="section-lead">
-          Cómo VARNATIR resuelve los dos mayores dolores de cabeza de los directores de cumplimiento y DPOs en Europa.
+          Cómo se sitúa VARNATIR entre las redes públicas de mensajería comercial y los sistemas corporativos del cliente, ejecutando evaluación de políticas in-flight en sub-3ms.
         </p>
       </div>
 
-      <div class="compliance-matrix">
-        <div class="comp-col">
-          <div class="comp-header">
-            <h4>DORA (Reglamento UE 2022/2554)</h4>
-          </div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-            Aplicable a entidades de crédito, empresas de servicios de inversión y aseguradoras desde enero de 2025.
-          </p>
-          <ul class="comp-list">
-            <li><strong>Gestión del riesgo TIC de terceros:</strong> Evita depender a ciegas de una plataforma de mensajería comercial sin SLA ni garantías operativas.</li>
-            <li><strong>Continuidad de negocio y conmutación:</strong> El modelo de conversación propio permite desviar flujos a canales alternativos en caso de caída del proveedor.</li>
-            <li><strong>Gestión y notificación de incidentes:</strong> Detección en tiempo real de anomalías de comunicación o intentos de suplantación.</li>
-          </ul>
-        </div>
+      <div class="visual-diagram-card">
+        <svg class="diagram-canvas-svg" viewBox="0 0 1100 360" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="grad-zone1-es" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#14181f" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#0b0d12" stop-opacity="0.95"/>
+            </linearGradient>
+            <linearGradient id="grad-zone2-es" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#185359" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2B7E6E" stop-opacity="0.15"/>
+            </linearGradient>
+            <linearGradient id="grad-zone3-es" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4B145F" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#185359" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
 
-        <div class="comp-col">
-          <div class="comp-header">
-            <h4>RGPD &amp; LOPDGDD</h4>
-          </div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-            Protección de datos personales de clientes y empleados en entornos de mensajería instantánea.
-          </p>
-          <ul class="comp-list">
-            <li><strong>Privacidad desde el diseño (PbD):</strong> Anonimización obligatoria previa antes de que cualquier texto sea evaluado por un modelo de IA.*</li>
-            <li><strong>Derecho al olvido y supresión:</strong> Borrado garantizado sobre el modelo de conversación propio sin depender de la política de retención de Meta o telcos.</li>
-            <li><strong>No cesión de datos a terceros:</strong> Los datos corporativos no se emplean para el reentrenamiento de modelos comerciales.</li>
-          </ul>
-        </div>
+          <!-- Zona 1: Perímetro Externo No Confiable -->
+          <rect x="20" y="20" width="310" height="320" rx="12" fill="url(#grad-zone1-es)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+          <text x="40" y="52" fill="#8E9997" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">ZONA 01 · PERÍMETRO EXTERNO NO CONFIABLE</text>
+          
+          <rect x="40" y="75" width="270" height="68" rx="8" fill="#171b22" stroke="rgba(255,255,255,0.12)" />
+          <text x="60" y="105" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Canal de Consumo Masivo</text>
+          <text x="60" y="125" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">WhatsApp / RCS / Web Móvil</text>
 
-        <div class="comp-col">
-          <div class="comp-header">
-            <h4>Desconexión Digital &amp; Laboral</h4>
+          <rect x="40" y="158" width="270" height="68" rx="8" fill="#171b22" stroke="rgba(255,255,255,0.12)" />
+          <text x="60" y="188" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Gateways de Operador / Cloud</text>
+          <text x="60" y="208" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">Meta Cloud API / Telco Endpoints</text>
+
+          <rect x="40" y="241" width="270" height="68" rx="8" fill="#171b22" stroke="rgba(255,255,255,0.12)" />
+          <text x="60" y="271" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Dispositivo Ciudadano / Empleado</text>
+          <text x="60" y="291" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">BYOD &middot; Terminal no corporativo</text>
+
+          <!-- Zona 2: Plano de Control de Vuelo Soberano VARNATIR -->
+          <rect x="365" y="20" width="370" height="320" rx="12" fill="url(#grad-zone2-es)" stroke="#5FD3B8" stroke-width="2" />
+          <text x="385" y="52" fill="#5FD3B8" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">ZONA 02 · CONTROL DE VUELO SOBERANO VARNATIR</text>
+          
+          <rect x="385" y="75" width="330" height="68" rx="8" fill="#0E1719" stroke="rgba(95,211,184,0.4)" />
+          <text x="405" y="103" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Gateway de Intervención en Vuelo</text>
+          <text x="405" y="123" fill="#5FD3B8" font-family="JetBrains Mono, monospace" font-size="11">Evaluación de políticas &lt;3ms &middot; TLS 1.3</text>
+
+          <rect x="385" y="158" width="330" height="68" rx="8" fill="#0E1719" stroke="rgba(95,211,184,0.4)" />
+          <text x="405" y="186" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Anonimización Determinista PII</text>
+          <text x="405" y="206" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">Aislamiento de contexto previo a modelos LLM</text>
+
+          <rect x="385" y="241" width="330" height="68" rx="8" fill="#0E1719" stroke="rgba(95,211,184,0.4)" />
+          <text x="405" y="269" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600">Motor de Encadenamiento Merkle</text>
+          <text x="405" y="289" fill="#5FD3B8" font-family="JetBrains Mono, monospace" font-size="11">No-repudio judicial &middot; Registro inmutable RFC 3161</text>
+
+          <!-- Zona 3: Núcleo Corporativo Blindado -->
+          <rect x="770" y="20" width="310" height="320" rx="12" fill="url(#grad-zone3-es)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+          <text x="790" y="52" fill="#E2E8F0" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">ZONA 03 · NÚCLEO BLINDADO CORPORATIVO</text>
+          
+          <rect x="790" y="75" width="270" height="68" rx="8" fill="#161522" stroke="rgba(255,255,255,0.12)" />
+          <text x="810" y="105" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">VPC Cliente / On-Premise</text>
+          <text x="810" y="125" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">Nube Soberana Europea (AWS / Azure / GCP)</text>
+
+          <rect x="790" y="158" width="270" height="68" rx="8" fill="#161522" stroke="rgba(255,255,255,0.12)" />
+          <text x="810" y="188" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Módulo Criptográfico Hardware</text>
+          <text x="810" y="208" fill="#5FD3B8" font-family="JetBrains Mono, monospace" font-size="11">KMS Dedicado / Custodia BYOK</text>
+
+          <rect x="790" y="241" width="270" height="68" rx="8" fill="#161522" stroke="rgba(255,255,255,0.12)" />
+          <text x="810" y="271" fill="#FFFFFF" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Sistemas Core &amp; SIEM</text>
+          <text x="810" y="291" fill="#8E9997" font-family="Inter, sans-serif" font-size="11">ERP &middot; CRM &middot; Webhooks SOC en tiempo real</text>
+
+          <!-- Conectores de flujo -->
+          <path d="M 310 109 L 385 109" stroke="#5FD3B8" stroke-width="2" stroke-dasharray="4 4" />
+          <path d="M 715 109 L 790 109" stroke="#5FD3B8" stroke-width="2" stroke-dasharray="4 4" />
+          <circle cx="347" cy="109" r="4" fill="#5FD3B8" />
+          <circle cx="752" cy="109" r="4" fill="#5FD3B8" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hub Interactivo Multi-Normativo de Cumplimiento -->
+  <section class="section-container bg-surface-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker text-accent">MATRIZ REGULATORIA CRUZADA</span>
+        <h2 class="section-h2">Centro Operativo de Cumplimiento Normativo</h2>
+        <p class="section-lead">
+          Selecciona cualquiera de los marcos regulatorios para revisar los requisitos técnicos de control, los mecanismos de ejecución de VARNATIR y los entregables listos para auditoría.
+        </p>
+      </div>
+
+      <!-- Framework Navigation Tabs -->
+      <div class="framework-tabs-nav" role="tablist">
+        <button class="f-tab active" data-framework="ens" role="tab" aria-selected="true">
+          ENS (RD 311/2022)
+        </button>
+        <button class="f-tab" data-framework="dora" role="tab" aria-selected="false">
+          DORA (UE 2022/2554)
+        </button>
+        <button class="f-tab" data-framework="gdpr" role="tab" aria-selected="false">
+          RGPD &amp; LOPDGDD
+        </button>
+        <button class="f-tab" data-framework="nis2" role="tab" aria-selected="false">
+          Directiva NIS2
+        </button>
+        <button class="f-tab" data-framework="iso" role="tab" aria-selected="false">
+          ISO/IEC 27001:2022
+        </button>
+        <button class="f-tab" data-framework="aiact" role="tab" aria-selected="false">
+          Ley de IA de la UE
+        </button>
+      </div>
+
+      <!-- Panel 1: ENS -->
+      <div class="framework-panel active" id="fpanel-ens">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ENS · OP.PL.1</span>
+            <h4>Segregación de Perímetro y Red</h4>
+            <p>Separación operativa absoluta entre la capa de transporte público de mensajería y las bases de datos corporativas internas.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Topología de Frontera Lógica &middot; Mapeo CCN-STIC</div>
           </div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-            Cumplimiento del Estatuto de los Trabajadores y leyes de teletrabajo.
-          </p>
-          <ul class="comp-list">
-            <li><strong>Franja horaria y calendario de atención:</strong> Bloqueo y respuesta automática fuera de jornada sin que el empleado deba silenciar manualmente su terminal.</li>
-            <li><strong>Separación vida personal/laboral:</strong> Coexistencia en número dual que garantiza que las conversaciones personales nunca entran en la plataforma.</li>
-            <li><strong>Traza de acceso separada:</strong> El empleador solo gobierna la línea corporativa, sin acceso a chats personales del dispositivo.</li>
-          </ul>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ENS · OP.EXP.8</span>
+            <h4>Registro Inalterable de Eventos</h4>
+            <p>Generación de trazas criptográficamente selladas para cada sesión transaccional, asegurando no-repudio ante investigación administrativa.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Exportación Digest de Cadena Merkle RFC 3161</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ENS · MP.COM.2</span>
+            <h4>Protección Criptográfica de Información</h4>
+            <p>Cifrado de extremo a extremo utilizando suites aprobadas (TLS 1.3, AES-256-GCM) con claves aisladas y bajo control de la entidad.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Memoria de Arquitectura Criptográfica</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: DORA -->
+      <div class="framework-panel" id="fpanel-dora">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">DORA · Art. 28</span>
+            <h4>Mitigación del Riesgo TIC de Terceros</h4>
+            <p>Elimina la dependencia no supervisada de plataformas de mensajería comercial sin SLA desplegando una capa de mediación soberana independiente.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Dossier de Evaluación de Riesgo TIC de Terceros</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">DORA · Art. 11</span>
+            <h4>Continuidad de Negocio y Conmutación</h4>
+            <p>El desacoplamiento del estado conversacional permite la redirección instantánea de trámites críticos a canales de contingencia ante caídas de telcos.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Protocolo Operativo de Resiliencia Multicanal</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">DORA · Art. 17</span>
+            <h4>Detección y Notificación de Incidentes TIC</h4>
+            <p>Detección en tiempo real de anomalías de protocolo, intentos de inyección maliciosa o suplantación, con webhooks directos al SOC.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: API de Alertas Tempranas y Telemetría Forense</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: RGPD -->
+      <div class="framework-panel" id="fpanel-gdpr">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">RGPD · Art. 25</span>
+            <h4>Privacidad desde el Diseño y por Defecto</h4>
+            <p>Enmascaramiento determinista de datos personales (PII) en vuelo antes de que cualquier carga sea evaluada por automatismos o modelos LLM.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Evaluación de Impacto en Protección de Datos (EIPD)</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">RGPD · Art. 17</span>
+            <h4>Derecho a la Supresión y Olvido Efectivo</h4>
+            <p>Borrado determinista garantizado en los repositorios de la organización sin depender de los ciclos de retención de operadores comerciales.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Certificado de Verificación de Supresión Criptográfica</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">RGPD · Art. 28</span>
+            <h4>Garantía Cero Reentrenamiento</h4>
+            <p>Cláusula contractual vinculante y salvaguardas técnicas que impiden que los datos de la organización sean utilizados para entrenar modelos ajenos.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Anexo DPA de Encargo de Tratamiento Blindado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: NIS2 -->
+      <div class="framework-panel" id="fpanel-nis2">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">NIS2 · Art. 21</span>
+            <h4>Seguridad en la Cadena de Suministro Digital</h4>
+            <p>Blindaje de la interacción en el borde de telecomunicaciones mediante inspección activa de cargas útiles, ficheros adjuntos y webhooks.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Anexo de Seguridad para Entidades Esenciales e Importantes</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">NIS2 · Art. 23</span>
+            <h4>Alerta Temprana en 24 Horas</h4>
+            <p>Integración con SIEM corporativo que remite pruebas criptográficas inmediatas y registros estructurados ante detección de ciberincidentes.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Especificación de Telemetría CSIRT y Reenvío de Logs</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">NIS2 · Art. 21.2</span>
+            <h4>Autenticación Multifactor y Zero-Trust</h4>
+            <p>Salas efímeras con enlace tokenizado y escalado a certificado digital cualificado eIDAS para transacciones y autorizaciones sensibles.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Guía de Pasarela de Identidad Fuerte eIDAS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: ISO -->
+      <div class="framework-panel" id="fpanel-iso">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ISO 27001 · A.8.24</span>
+            <h4>Uso de Criptografía</h4>
+            <p>Gestión del ciclo de vida de claves criptográficas con soporte de módulos HSM propios del cliente (BYOK vía PKCS#11, AWS KMS, Azure Key Vault).</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Política de Gestión de Claves Criptográficas</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ISO 27001 · A.8.15</span>
+            <h4>Registro y Monitorización</h4>
+            <p>Trazas de auditoría a prueba de manipulación con reenvío centralizado, registro en milisegundos y sincronización horaria certificada NTP.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Esquema de Exportación de Auditoría SOC 2 / ISO</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">ISO 27001 · A.5.23</span>
+            <h4>Seguridad en Servicios Cloud</h4>
+            <p>Aislamiento estricto de tenants e infraestructura soberana europea alojada en centros de datos certificados en ISO 27001 / Esquema Nacional.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Matriz de Controles de Seguridad Cloud</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 6: Ley de IA -->
+      <div class="framework-panel" id="fpanel-aiact">
+        <div class="fpanel-grid">
+          <div class="fpanel-card">
+            <span class="fpanel-badge">AI ACT · Art. 14</span>
+            <h4>Supervisión Humana e Intervención en Vuelo</h4>
+            <p>Capacidades activas de 'human-in-the-loop' que permiten a un supervisor tomar el control instantáneamente antes del envío al usuario.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Memoria de Supervisión Humana de Sistemas IA</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">AI ACT · Art. 12</span>
+            <h4>Mantenimiento de Registros Técnicos</h4>
+            <p>Registro inmutable automático de prompts de entrada, hiperparámetros, contextos recuperados y respuestas generadas para auditoría post-mercado.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Protocolo de Trazabilidad y Registro de Modelos IA</div>
+          </div>
+          <div class="fpanel-card">
+            <span class="fpanel-badge">AI ACT · Art. 50</span>
+            <h4>Transparencia y Marcado de Contenido Sintético</h4>
+            <p>Identificación determinista y notificación explícita al interlocutor al interactuar con sistemas de IA, cumpliendo las obligaciones de transparencia.</p>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 14px;">Entregable: Especificación de Marcado y Transparencia Conversacional</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Matriz Criptográfica y de Madurez -->
+  <!-- Evidencia Criptográfica en Vivo y Cadena Merkle -->
+  <section class="section-container">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-copy">
+          <span class="section-kicker text-accent">CERTEZA FORENSE</span>
+          <h2 class="section-h2">Auditabilidad Criptográfica en Cadena Merkle RFC 3161</h2>
+          <p class="section-lead">
+            Los registros en bases de datos tradicionales pueden ser alterados por administradores. VARNATIR encadena criptográficamente cada interacción en un árbol Merkle sellado, proporcionando plena validez probatoria ante tribunales y comités de regulación.
+          </p>
+          <ul class="feature-bullets">
+            <li>
+              <strong>No-repudio judicial inmutable:</strong> Cada evento de mensajería incorpora el hash SHA-256 del evento previo, imposibilitando cualquier alteración retroactiva.
+            </li>
+            <li>
+              <strong>Sellado de tiempo cualificado europeo:</strong> Los bloques raíz se sellan frente a prestadores de servicios de confianza (TSP) acreditados bajo estándar eIDAS RFC 3161.
+            </li>
+            <li>
+              <strong>Verificación Zero-Knowledge:</strong> Auditores externos pueden verificar matemáticamente la integridad sin tener que desencriptar datos confidenciales de clientes.
+            </li>
+          </ul>
+        </div>
+
+        <div class="split-visual">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="terminal-dots-wrap">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <span class="terminal-title">varnatir-merkle-audit-cli --verificar-cadena</span>
+              <span class="terminal-status-badge">SELLADO EN VIVO</span>
+            </div>
+            <div class="terminal-body" style="font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.65;">
+              <div class="t-line"><span class="t-ts">[14:02:41.102]</span> <span class="t-tag">EVENTO_INSPECCIÓN</span> Paquete interceptado desde gateway de operador.</div>
+              <div class="t-line"><span class="t-ts">[14:02:41.104]</span> <span class="t-tag accent">MÁSCARA_PII</span> 2 campos sanitizados &middot; SHA256: 3a9f7...b10</div>
+              <div class="t-line"><span class="t-ts">[14:02:41.105]</span> <span class="t-tag success">POLÍTICA_OK</span> Regla ENS-MP.COM.2 validada &middot; Latencia: 2.1ms</div>
+              <div class="t-line highlight"><span class="t-ts">[14:02:41.106]</span> <span class="t-tag success">RAÍZ_MERKLE</span> Bloque #892,104 &middot; Hash: 0x8b3f4...e90a</div>
+              <div class="t-line"><span class="t-ts">[14:02:41.107]</span> <span class="t-tag">SELLO_RFC3161</span> Token temporal emitido por Prestador Cualificado Europeo.</div>
+              <div class="t-line" style="color: var(--accent); margin-top: 8px;">✓ ESTADO DE VERIFICACIÓN: 100% VÁLIDO &middot; INTEGRIDAD DE CADENA CERTIFICADA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matriz Criptográfica y de Madurez Técnica -->
   <section class="section-container bg-surface-alt">
     <div class="container">
       <div class="section-header">
         <span class="section-kicker text-accent">TABLA DE VERDAD TÉCNICA</span>
         <h2 class="section-h2">Matriz de capacidades y nivel de madurez</h2>
         <p class="section-lead">
-          En cumplimiento estricto de nuestro código de honestidad: cada capacidad sensible viaja con su estado real de entrega.
+          En cumplimiento estricto de nuestro código de honestidad: cada capacidad sensible viaja con su estado real de entrega y alcance técnico exacto.
         </p>
       </div>
 
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; background: var(--surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border);">
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
           <thead>
-            <tr style="background: var(--bg-2); border-bottom: 1px solid var(--border-strong);">
-              <th style="padding: 16px 20px; font-family: var(--font-mono); color: var(--accent);">Capacidad Sensible</th>
-              <th style="padding: 16px 20px; font-family: var(--font-mono); color: var(--text);">Madurez Técnica</th>
-              <th style="padding: 16px 20px; font-family: var(--font-mono); color: var(--text);">Alcance Exacto de Entrega</th>
+            <tr>
+              <th>Capacidad Sensible</th>
+              <th>Madurez Técnica</th>
+              <th>Alcance Exacto de Entrega</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px 20px; font-weight: 600;">Cifrado de Conversaciones</td>
-              <td style="padding: 16px 20px;"><span style="background: var(--accent-dim); color: var(--accent); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem;">PRODUCTO</span></td>
-              <td style="padding: 16px 20px; color: var(--text-muted);">E2E gestionado por el backend en tránsito y reposo. Clave por organización. En salas efímeras: clave efímera en navegador.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px 20px; font-weight: 600;">Anonimización Pre-LLM</td>
-              <td style="padding: 16px 20px;"><span style="background: var(--accent-dim); color: var(--accent); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem;">PRODUCTO</span></td>
-              <td style="padding: 16px 20px; color: var(--text-muted);">Enmascaramiento de PII antes de enviar petición a proveedores de IA.* Clave y contexto bajo control de la organización.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px 20px; font-weight: 600;">Recuperación Ciega (Blind Retriever)</td>
-              <td style="padding: 16px 20px;"><span style="background: var(--warn-dim); color: var(--warn); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem;">PILOTO REAL</span></td>
-              <td style="padding: 16px 20px; color: var(--text-muted);">Probado con éxito en clientes reales para acceso a bases de conocimiento sin exponer el corpus documental en bruto.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <td style="padding: 16px 20px; font-weight: 600;">Custodia de Clave por Cliente (BYOK)</td>
-              <td style="padding: 16px 20px;"><span style="background: var(--surface-2); color: var(--text); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem;">OPCIÓN PREPARADA</span></td>
-              <td style="padding: 16px 20px; color: var(--text-muted);">Opción de custodia de claves de cifrado en KMS propio del cliente para despliegues dedicados y PaaS.</td>
+            <tr>
+              <td style="font-weight: 600; color: var(--text);">Cifrado de Conversaciones</td>
+              <td><span class="status-pill status-product">PRODUCTO</span></td>
+              <td style="color: var(--text-muted);">E2E gestionado por el backend en tránsito (TLS 1.3) y reposo (AES-256-GCM). Clave por organización. En salas efímeras: clave efímera en navegador.</td>
             </tr>
             <tr>
-              <td style="padding: 16px 20px; font-weight: 600;">Esquema Nacional de Seguridad (ENS)</td>
-              <td style="padding: 16px 20px;"><span style="background: var(--accent-dim); color: var(--accent); padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem;">CONFORME MEDIA</span></td>
-              <td style="padding: 16px 20px; color: var(--text-muted);">Diseñado conforme a los requerimientos de la Categoría Media del RD 311/2022.</td>
+              <td style="font-weight: 600; color: var(--text);">Anonimización Pre-LLM</td>
+              <td><span class="status-pill status-product">PRODUCTO</span></td>
+              <td style="color: var(--text-muted);">Enmascaramiento de PII antes de enviar petición a proveedores de IA.* Clave y contexto bajo control de la organización.</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text);">Recuperación Ciega (Blind Retriever)</td>
+              <td><span class="status-pill status-pilot">PILOTO REAL</span></td>
+              <td style="color: var(--text-muted);">Probado con éxito en clientes reales para acceso a bases de conocimiento sin exponer el corpus documental en bruto.</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text);">Custodia de Clave por Cliente (BYOK)</td>
+              <td><span class="status-pill status-option">OPCIÓN PREPARADA</span></td>
+              <td style="color: var(--text-muted);">Opción de custodia de claves de cifrado en KMS/HSM propio del cliente para despliegues dedicados y PaaS.</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text);">Esquema Nacional de Seguridad (ENS)</td>
+              <td><span class="status-pill status-compliant">CONFORME MEDIA</span></td>
+              <td style="color: var(--text-muted);">Diseñado conforme a los requerimientos de la Categoría Media del RD 311/2022.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="canonical-footnote" style="margin-top: 24px; padding: 12px 16px; background: rgba(95, 211, 184, 0.05); border-left: 2px solid var(--accent); border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">
+      <div class="canonical-footnote" style="margin-top: 24px;">
         * <strong>Nota preceptiva obligatoria:</strong> No expone PII. Datos anonimizados antes de llegar al modelo. La clave y la custodia permanecen bajo el control de tu organización.
+      </div>
+    </div>
+  </section>
+
+  <!-- Avisos Legales y Regulatorios (Anclas para Footer) -->
+  <section class="section-container">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker text-accent">GOBERNANZA JURÍDICA</span>
+        <h2 class="section-h2">Información Corporativa &amp; Disposiciones Estatutarias</h2>
+        <p class="section-lead">
+          Documentación legal, política de privacidad y declaración sobre cookies conforme a la normativa española y de la Unión Europea.
+        </p>
+      </div>
+
+      <div class="fpanel-grid">
+        <div class="legal-drawer-card" id="aviso-legal">
+          <h4>Aviso Legal &amp; Titularidad</h4>
+          <p>
+            VARNATIR es una marca deep-tech operada por WOZTELL SANUKER GROUP. Especializada en gobernanza de comunicaciones críticas y mediación zero-trust sobre mensajería masiva.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px;">
+            Sede: Unión Europea &middot; Contacto: legal@varnatir.com<br />
+            Legislación aplicable: Reino de España y Derecho Comunitario Europeo.
+          </div>
+        </div>
+
+        <div class="legal-drawer-card" id="privacidad">
+          <h4>Política de Privacidad &amp; RGPD</h4>
+          <p>
+            Tratamos las solicitudes comerciales y de soporte técnico únicamente para coordinar sandboxes de validación y dossiers de auditoría. Jamás comercializamos ni cedemos datos a terceros.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px;">
+            Responsable: WOZTELL SANUKER GROUP &middot; Derechos: Acceso, rectificación, supresión y limitación en dpo@varnatir.com.
+          </div>
+        </div>
+
+        <div class="legal-drawer-card" id="cookies">
+          <h4>Política de Cookies &amp; Privacidad</h4>
+          <p>
+            Este sitio web utiliza exclusivamente cookies técnicas esenciales requeridas para la seguridad de sesión y la preferencia de idioma del usuario. Cero rastreadores publicitarios o cookies de perfilado.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px;">
+            Almacenamiento: Preferencia local ('varnatir_lang') &middot; Rastreadores de terceros: Ninguno.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -261,7 +568,7 @@
         <p class="cta-subhead">Facilitamos a tu equipo técnico y jurídico la memoria de seguridad y el cuestionario técnico de cumplimiento.</p>
         <div class="cta-buttons">
           <button class="btn btn-primary btn-lg" onclick="openModal('Auditoría CISO')">Solicitar dossier de seguridad</button>
-          <a href="../industries.html" class="btn btn-ghost btn-lg">Explorar casos por sector &rarr;</a>
+          <a href="industries.html" class="btn btn-ghost btn-lg">Explorar casos por sector &rarr;</a>
         </div>
       </div>
     </div>
@@ -313,8 +620,9 @@
     <div class="container footer-bottom">
       <div class="footer-legal">
         <span>&copy; 2026 VARNATIR · Todos los derechos reservados.</span>
-        <span>Aviso Legal</span>
-        <span>Privacidad &amp; RGPD</span>
+        <a href="#aviso-legal" style="color: inherit; text-decoration: none;">Aviso Legal</a>
+        <a href="#privacidad" style="color: inherit; text-decoration: none;">Privacidad &amp; RGPD</a>
+        <a href="#cookies" style="color: inherit; text-decoration: none;">Cookies</a>
       </div>
       <div class="footer-governance">
         <span>Confidencial · noindex, nofollow</span>

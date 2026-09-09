@@ -384,7 +384,16 @@ button {
   height: 2px;
   background: #FFFFFF;
   border-radius: 2px;
-  transition: var(--transition);
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ── BOTONES ── */
@@ -1647,11 +1656,24 @@ button {
 }
 
 @media (max-width: 960px) {
-  .header-actions { display: none; }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 12px;
+  }
+  .header-actions .btn {
+    display: none;
+  }
+  .lang-switcher {
+    display: flex !important;
+  }
   .mobile-toggle {
     display: flex;
     cursor: pointer;
     z-index: 1060;
+    margin-left: 0;
   }
   .main-nav { display: none; }
   .main-nav.open {
@@ -2475,6 +2497,479 @@ button {
   .partner-split-form {
     padding: 24px 18px;
   }
+}
+
+/* ==========================================================================
+   CONSOLIDATED DESIGN SYSTEM FIXES (GHOST CLASSES & COMPLIANCE EXTENSIONS)
+   ========================================================================== */
+
+/* 1. Universal Split Layout (Restores compliance, ia, and about pages) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 960px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+.split-copy {
+  display: flex;
+  flex-direction: column;
+}
+.split-visual {
+  width: 100%;
+}
+
+/* 2. Subpage Footer Normalization (.footer-grid & .footer-nav-col alias) */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 44px;
+}
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-nav-col h5 {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+.footer-nav-col a {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.footer-nav-col a:hover {
+  color: var(--accent);
+}
+
+/* 3. Subpage CTA Banner Normalization */
+.cta-banner-inner {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.cta-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: block;
+}
+.cta-subhead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+@media (max-width: 960px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* 4. Modal Window Normalization (.modal-window alias) */
+.modal-window {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  animation: modalIn 0.35s var(--ease-out);
+}
+@media (max-width: 600px) {
+  .modal-window {
+    padding: 28px 20px;
+  }
+}
+.modal-header {
+  margin-bottom: 24px;
+}
+.modal-header h3 {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.modal-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.form-notice, .form-note {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin-top: 14px;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+}
+
+/* 5. Framework Tabs & Interactive Console Tokens */
+.framework-tabs-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1024px) {
+  .framework-tabs-nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .framework-tabs-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.f-tab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: inherit;
+}
+.f-tab:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+}
+.f-tab.active {
+  background: rgba(95, 211, 184, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-dim);
+}
+.f-tab-code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+.f-tab-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.framework-panel {
+  display: none;
+}
+.framework-panel.active {
+  display: block;
+  animation: modalIn 0.35s var(--ease-out);
+}
+.fpanel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 960px) {
+  .fpanel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.fpanel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  transition: var(--transition);
+}
+.fpanel-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+.fpanel-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.fpanel-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.fpanel-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* 6. Status Pills & Standardized Matrix Footnotes */
+.matrix-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.matrix-table th {
+  background: var(--surface-2);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.matrix-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+.matrix-table tr:last-child td {
+  border-bottom: none;
+}
+.matrix-table tr:hover td {
+  background: rgba(255, 255, 255, 0.015);
+}
+.table-subtext {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-pill.status-prod {
+  background: rgba(95, 211, 184, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(95, 211, 184, 0.3);
+}
+.status-pill.status-certified {
+  background: rgba(168, 85, 247, 0.12);
+  color: var(--accent-purple);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.status-pill.status-enterprise {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.status-pill.status-pilot {
+  background: rgba(251, 191, 36, 0.12);
+  color: #FBBF24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+.canonical-footnote-styled {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: rgba(95, 211, 184, 0.04);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 7. Institutional Government Emblem Wrap */
+.gov-emblem-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.gov-emblem-title {
+  font-size: 1.25rem;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.gov-emblem-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* 8. CISO Architecture Diagram Card */
+.visual-diagram-card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-top: 36px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow-x: auto;
+}
+.diagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.diagram-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.diagram-legend {
+  display: flex;
+  gap: 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.legend-dot.external {
+  background: #EF4444;
+}
+.legend-dot.varnatir {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+.legend-dot.enterprise {
+  background: var(--accent-purple);
+}
+.diagram-canvas-svg {
+  width: 100%;
+  min-width: 820px;
+  height: auto;
+  display: block;
+}
+
+/* 9. Cryptographic Live Terminal Console */
+.terminal-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-left: auto;
+}
+.t-line {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+.t-line.highlight {
+  background: rgba(95, 211, 184, 0.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--text);
+}
+.t-ts {
+  color: var(--text-faint);
+  margin-right: 8px;
+}
+.t-tag {
+  font-weight: 700;
+  margin-right: 6px;
+}
+.t-tag.ok { color: var(--accent); }
+.t-tag.warn { color: #FBBF24; }
+.t-tag.accent { color: #38BDF8; }
+.t-tag.success { color: #10B981; }
+
+/* 10. Legal Disclosure Drawers */
+.legal-drawer-section {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.legal-drawer-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+.legal-drawer-card:last-child {
+  margin-bottom: 0;
+}
+.legal-drawer-title {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.legal-drawer-content {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.legal-drawer-content p {
+  margin-bottom: 12px;
+}
+.legal-drawer-content p:last-child {
+  margin-bottom: 0;
 }
 
 

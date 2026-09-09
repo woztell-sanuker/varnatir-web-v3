@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
   initModal();
   initMobileMenu();
+  initFrameworkTabs();
 });
 
 /* --------------------------------------------------------------------------
@@ -496,16 +497,33 @@ function initModal() {
     document.getElementById('cta-bottom-btn')
   ];
 
+  window.closeModal = function() {
+    if (!modal) return;
+    modal.classList.remove('active', 'open');
+    modal.setAttribute('aria-hidden', 'true');
+  };
+
   window.openModal = function(presetName) {
     if (!modal) return;
     modal.classList.add('active', 'open');
     modal.setAttribute('aria-hidden', 'false');
 
-    if (presetName) {
-      const caseInput = document.getElementById('form-case');
-      if (caseInput && !caseInput.value) {
-        caseInput.value = `Interés en plan: ${presetName}`;
+    const sectorSelect = document.getElementById('form-sector');
+    if (sectorSelect && presetName) {
+      const lower = presetName.toLowerCase();
+      if (lower.includes('starter') && sectorSelect.querySelector('option[value="starter"]')) {
+        sectorSelect.value = 'starter';
+      } else if (lower.includes('enterprise') && sectorSelect.querySelector('option[value="enterprise"]')) {
+        sectorSelect.value = 'enterprise';
+      } else if ((lower.includes('mission') || lower.includes('misión') || lower.includes('critica')) && sectorSelect.querySelector('option[value="mision-critica"]')) {
+        sectorSelect.value = 'mision-critica';
       }
+    }
+
+    const caseInput = document.getElementById('form-case');
+    if (caseInput && presetName && !caseInput.value) {
+      const isSpanish = window.location.pathname.includes('/es/') || window.location.pathname.endsWith('/es');
+      caseInput.placeholder = isSpanish ? `Interés en: ${presetName}. Describe tu operativa...` : `Interest in: ${presetName}. Describe your workflow...`;
     }
   };
 
@@ -520,22 +538,19 @@ function initModal() {
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active', 'open');
-      modal.setAttribute('aria-hidden', 'true');
+      window.closeModal();
     });
   }
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.classList.remove('active', 'open');
-      modal.setAttribute('aria-hidden', 'true');
+      window.closeModal();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && (modal.classList.contains('active') || modal.classList.contains('open'))) {
-      modal.classList.remove('active', 'open');
-      modal.setAttribute('aria-hidden', 'true');
+      window.closeModal();
     }
   });
 }
@@ -545,7 +560,8 @@ function handleFormSubmit(e) {
   const submitBtn = document.getElementById('submit-btn');
   if (!submitBtn) return;
 
-  submitBtn.innerText = 'Procesando solicitud...';
+  const isSpanish = window.location.pathname.includes('/es/') || window.location.pathname.endsWith('/es');
+  submitBtn.innerText = isSpanish ? 'Procesando solicitud...' : 'Processing request...';
   submitBtn.disabled = true;
 
   setTimeout(() => {
@@ -554,15 +570,21 @@ function handleFormSubmit(e) {
       modalBox.innerHTML = `
         <div style="text-align: center; padding: 24px 0;">
           <div style="font-size: 3rem; margin-bottom: 16px; color: var(--accent);">✓</div>
-          <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--text);">Solicitud de Piloto Recibida</h3>
+          <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--text);">
+            ${isSpanish ? 'Solicitud de Piloto Recibida' : 'Pilot Sandbox Request Received'}
+          </h3>
           <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
-            Un arquitecto de soluciones de VARNATIR contactará contigo en menos de 24 horas para definir el perímetro acotado de tu flujo sensible.
+            ${isSpanish 
+              ? 'Un arquitecto de soluciones de VARNATIR contactará contigo en menos de 24 horas laborables para coordinar el despliegue del sandbox en 48 horas.'
+              : 'A VARNATIR solutions architect will reach out within 24 business hours to coordinate your 48-hour pilot sandbox deployment.'}
           </p>
-          <button class="btn btn-primary" onclick="location.reload()">Volver a la web</button>
+          <button class="btn btn-primary" onclick="window.closeModal()">
+            ${isSpanish ? 'Cerrar ventana' : 'Close window'}
+          </button>
         </div>
       `;
     }
-  }, 900);
+  }, 800);
 }
 window.handleFormSubmit = handleFormSubmit;
 
@@ -577,11 +599,43 @@ function initMobileMenu() {
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
+    toggle.classList.toggle('active');
   });
 
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
+      toggle.classList.remove('active');
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   11. Multi-Framework Interactive Compliance Switcher
+   -------------------------------------------------------------------------- */
+function initFrameworkTabs() {
+  const tabs = document.querySelectorAll('.f-tab');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const framework = tab.dataset.framework;
+      if (!framework) return;
+
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      document.querySelectorAll('.framework-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      const targetPanel = document.getElementById(`fpanel-${framework}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
     });
   });
 }

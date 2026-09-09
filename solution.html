@@ -215,12 +215,12 @@
           <span class="badge-deploy">Cloud / SaaS</span>
           <h4 style="font-size: 1.4rem; margin: 12px 0;">VARNATIR Cloud</h4>
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            Hosted on sovereign European cloud infrastructure compliant with GDPR and ENS Media (RD 311/2022). Strict multi-tenant logical isolation. Live in 24 hours.
+            Hosted on sovereign European cloud infrastructure compliant with GDPR and ENS Media (RD 311/2022). Strict multi-tenant logical isolation. Production sandbox live in 48 hours.
           </p>
           <ul class="pricing-features" style="margin-bottom: 24px; font-size: 0.85rem;">
             <li>✓ Strict cryptographic organization isolation</li>
             <li>✓ Automatic regulatory policy feed updates</li>
-            <li>✓ 99.9% availability SLA</li>
+            <li>✓ 99.9% availability SLA (99.99% for Dedicated)</li>
           </ul>
           <button class="btn btn-secondary btn-block" onclick="openModal('Cloud SaaS')">Request Cloud Access</button>
         </div>
@@ -251,6 +251,54 @@
             <li>✓ Custom high-assurance security audit and certification</li>
           </ul>
           <button class="btn btn-secondary btn-block" onclick="openModal('Mission Critical')">Contact Security Team</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Documentation & Interoperability Specs -->
+  <section class="section-container" id="api">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker text-accent">OPEN INTEGRATION &amp; GOVERNANCE APIS</span>
+        <h2 class="section-h2">Universal In-Flight Flight Control API</h2>
+        <p class="section-lead">
+          Connect your core systems, CRMs, HSM vaults, and LLM providers via ultra-low latency REST endpoints and qualified RFC 3161 audit webhooks.
+        </p>
+      </div>
+
+      <div class="split-layout">
+        <div class="split-copy">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px; color: var(--text);">Zero-Friction Enterprise Interoperability</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+            VARNATIR provides OpenAPI 3.1 compliant endpoints that allow seamless ingestion of transactional conversation streams, bidirectional cryptographic event validation, and real-time policy evaluation.
+          </p>
+          <ul class="pricing-features" style="margin-bottom: 24px;">
+            <li>✓ <strong>Sub-3ms Latency Guarantee:</strong> Evaluated in-memory at the carrier gateway boundary.</li>
+            <li>✓ <strong>RFC 3161 Qualified Webhooks:</strong> Stream sealed Merkle root updates directly into your SIEM/SOC.</li>
+            <li>✓ <strong>Hardware Security Module (HSM) Interconnect:</strong> PKCS#11 and AWS KMS/Azure Key Vault native BYOK.</li>
+          </ul>
+          <div>
+            <button class="btn btn-secondary" onclick="openModal('API Technical Specs')">Request API Specifications &rarr;</button>
+          </div>
+        </div>
+
+        <div class="split-visual">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="terminal-dots-wrap">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <span class="terminal-title">curl -X POST https://api.varnatir.internal/v1/govern/intercept</span>
+            </div>
+            <div class="terminal-body" style="font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6;">
+              <div class="t-line"><span class="t-ts">Headers:</span> <span class="t-tag accent">Authorization: Bearer vnt_sec_9f8...</span></div>
+              <div class="t-line"><span class="t-ts">Payload:</span> {"session_id": "0x4a9b", "carrier": "whatsapp", "in_flight": true}</div>
+              <div class="t-line highlight"><span class="t-tag success">&larr; HTTP 200 OK</span> <span style="color: var(--accent);">{"verdict": "ALLOW", "policy_eval_ms": 1.84, "pii_masked": 2, "merkle_leaf": "0x7c3..."}</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
