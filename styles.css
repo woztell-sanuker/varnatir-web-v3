@@ -2298,3 +2298,135 @@ button {
   }
 }
 
+/* ── PARTNER DOUBLE-COLUMN FINAL BLOCK ── */
+.partner-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 52px;
+  align-items: start;
+  margin-top: 24px;
+}
+.partner-split-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.partner-split-info .section-kicker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.partner-split-info .section-h2 {
+  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  line-height: 1.15;
+  margin: 0;
+  text-align: left;
+}
+.partner-split-info .section-lead {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: left;
+}
+.partner-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+.partner-perk-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+.partner-perk-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+.partner-perk-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 8px;
+  background: rgba(95, 211, 184, 0.12);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner-perk-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.partner-perk-text h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+.partner-perk-text p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.partner-direct-contact {
+  padding: 18px 20px;
+  background: rgba(95, 211, 184, 0.05);
+  border: 1px dashed rgba(95, 211, 184, 0.3);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.partner-direct-contact svg {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  color: var(--accent);
+}
+.partner-direct-contact p {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+.partner-direct-contact a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.partner-split-form {
+  background: var(--surface);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.partner-split-form h3 {
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+@media (max-width: 992px) {
+  .partner-split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .partner-split-form {
+    padding: 24px 18px;
+  }
+}
+
+

@@ -15,7 +15,7 @@
 
   <link rel="stylesheet" href="../styles.css?v=3.2" />
   <style>
-    /* Partner-specific refined styling */
+    /* Partner-specific adjustments */
     .partner-grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -69,46 +69,6 @@
     .partner-stat-highlight span {
       color: var(--accent);
     }
-    .partner-toolkit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 36px;
-    }
-    .toolkit-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      transition: border-color var(--transition-fast);
-    }
-    .toolkit-item:hover {
-      border-color: var(--accent);
-    }
-    .toolkit-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: rgba(95, 211, 184, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .toolkit-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-    .partner-form-wrapper {
-      max-width: 760px;
-      margin: 40px auto 0;
-      background: var(--surface);
-      border: 1px solid var(--border-hover);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    }
     .form-row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -117,9 +77,6 @@
     @media (max-width: 768px) {
       .form-row-2 {
         grid-template-columns: 1fr;
-      }
-      .partner-form-wrapper {
-        padding: 24px 20px;
       }
     }
   </style>
@@ -133,7 +90,7 @@
   <div class="top-bar">
     <div class="container top-bar-content">
       <span class="pulse-dot"></span>
-      <span>Programa Oficial de Canal: Alianza como Solution Partner de Meta &amp; Cátedra CBC-UV</span>
+      <span>Programa Oficial de Canal: Alianza Solution Partner de Meta &amp; Cátedra CBC-UV</span>
       <a href="#postular" class="top-bar-link">Postula como Partner &rarr;</a>
     </div>
   </div>
@@ -164,17 +121,17 @@
       <nav class="main-nav" id="main-nav">
         <a href="index.html" class="nav-link">Inicio</a>
         <a href="solution.html" class="nav-link">Solución</a>
-        <a href="ia.html" class="nav-link">IA & Privacidad</a>
+        <a href="ia.html" class="nav-link">IA &amp; Privacidad</a>
         <a href="industries.html" class="nav-link">Industrias</a>
         <a href="compliance.html" class="nav-link">Compliance</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="../catedra.html" class="nav-link">Cátedra</a>
+        <a href="catedra.html" class="nav-link">Cátedra</a>
         <a href="become-a-partner.html" class="nav-link active">Partners</a>
       </nav>
 
       <div class="header-actions">
-        <div class="lang-switcher" aria-label="Language Selector">
-          <a href="../become-a-partner.html" class="lang-link " data-lang="en">EN</a>
+        <div class="lang-switcher" aria-label="Selector de Idioma">
+          <a href="../become-a-partner.html" class="lang-link" data-lang="en">EN</a>
           <a href="become-a-partner.html" class="lang-link active" data-lang="es">ES</a>
         </div>
         <a href="#postular" class="btn btn-primary">Postular como Partner</a>
@@ -186,7 +143,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- BLOQUE 1: HERO SECTION -->
   <section class="hero-section" style="padding: 70px 0 60px;">
     <div class="hero-glow"></div>
     <div class="container hero-container">
@@ -202,88 +159,63 @@
 
       <div class="hero-actions" style="justify-content: center; gap: 16px; margin-bottom: 40px;">
         <a href="#postular" class="btn btn-primary btn-lg">Solicitar Acceso al Canal &rarr;</a>
-        <a href="#economics" class="btn btn-ghost btn-lg">Explorar Economics &amp; Niveles</a>
+        <a href="#modalidades" class="btn btn-ghost btn-lg">Explorar Modalidades &amp; Economics</a>
       </div>
 
       <!-- Trust Badges -->
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
         <span class="compliance-chip"><span class="chip-dot"></span> Solution Partner Oficial de Meta</span>
         <span class="compliance-chip"><span class="chip-dot"></span> Hasta 30% Revenue Share Recurrente</span>
-        <span class="compliance-chip"><span class="chip-dot"></span> Soporte Preventa en Comités CISO</span>
+        <span class="compliance-chip"><span class="chip-dot"></span> Acompañamiento Preventa en Comités CISO</span>
         <span class="compliance-chip"><span class="chip-dot"></span> Respaldo Metodológico Cátedra CBC-UV</span>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 1: THE BUSINESS OPPORTUNITY (ECONOMICS DEL CANAL) -->
-  <section class="section-container bg-surface-alt" id="economics">
+  <!-- BLOQUE 2: MODALIDADES DE ASOCIACIÓN Y ECONOMICS -->
+  <section class="section-container bg-surface-alt" id="modalidades">
     <div class="container">
       <div class="section-header">
-        <span class="section-kicker text-accent">ECONOMICS DE LA GOBERNANZA CONVERSACIONAL</span>
-        <h2 class="section-h2">La mayor ola de demanda empresarial, frenada por una sola objeción</h2>
+        <span class="section-kicker text-accent">PROGRAMA DE CANAL &amp; REVENUE SHARE</span>
+        <h2 class="section-h2">Diseñado para integradores, consultoras e ISVs de alto impacto</h2>
         <p class="section-lead">
-          El 78% de los proyectos de WhatsApp e Inteligencia Artificial en grandes cuentas y sector público se paralizan en el Comité de Ciberseguridad y Compliance. Descubre cómo desbloquearlos y convertirlos en contratos de alto margen.
+          El 78% de los proyectos conversacionales en grandes cuentas se frenan por objeciones de ciberseguridad. Desbloquéalos con gobernanza en origen y genera ingresos recurrentes de alto margen.
         </p>
       </div>
 
-      <div class="split-layout" style="margin-top: 48px;">
-        <div class="split-copy">
-          <h3 style="font-size: 1.5rem; margin-bottom: 16px;">El dilema del CISO es tu mayor oportunidad de consultoría</h3>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
-            Tus clientes corporativos ven cómo sus equipos de negocio, ventas y atención usan WhatsApp a diario. Pero prohibirlo genera Shadow IT descontrolado, y permitirlo sin gobierno expone a la empresa a multas del RGPD, sanciones DORA y riesgo reputacional severo.
-          </p>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-            Como Partner de VARNATIR, entras a la mesa del decisor no con «otro chatbot de soporte», sino con la <strong>infraestructura de control de vuelo</strong> que neutraliza la objeción del DPO antes de que ocurra: intervención en origen, anonimización previa al LLM, custodia probatoria RFC 3161 y despliegue sobre nube soberana europea.
-          </p>
-          <ul class="feature-bullets">
-            <li><strong>Desbloqueo Inmediato de Presupuesto:</strong> Convierte presupuestos de ciberseguridad y riesgo en aceleradores de proyectos conversacionales.</li>
-            <li><strong>Respaldo Solution Partner de Meta:</strong> Acreditación oficial, verificación de cuentas y acceso directo al canal oficial WhatsApp Cloud API.</li>
-            <li><strong>Sin Competencia Tradicional:</strong> Los archivadores pasivos (DCGA) solo guardan registros tras la fuga. Tú ofreces la única solución con intervención activa en origen.</li>
-          </ul>
+      <!-- Métricas / Economics Strip -->
+      <div class="roi-grid" style="grid-template-columns: repeat(3, 1fr); margin: 40px 0 48px;">
+        <div class="roi-card">
+          <div class="roi-num">3x &ndash; 5x</div>
+          <div class="roi-label">Multiplicador de ARPU</div>
+          <div class="roi-desc">Incremento de ticket medio al integrar gobierno activo, anonimización y ENS Media frente a bots estándar.</div>
         </div>
-
-        <div class="split-visual">
-          <div class="partner-card" style="border-color: rgba(95, 211, 184, 0.4); background: rgba(14, 20, 18, 0.8);">
-            <span class="partner-tier-badge">MULTIPLICADOR DE ARPU</span>
-            <div class="partner-stat-highlight">3x &ndash; 5x</div>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;">
-              Incremento del ticket medio de proyecto al integrar gobierno de datos, anonimización y certificación ENS Media frente a proyectos conversacionales convencionales.
-            </p>
-            <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
-            <span class="partner-tier-badge cyan">REVENUE SHARE RECURRENTE</span>
-            <div class="partner-stat-highlight">Hasta <span>30%</span></div>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">
-              Participación recurrente de ingresos sobre las licencias de control de vuelo, volumen de mensajes gestionados y conectores de integración de tus clientes.
-            </p>
-          </div>
+        <div class="roi-card">
+          <div class="roi-num">Hasta 30%</div>
+          <div class="roi-label">Revenue Share Recurrente</div>
+          <div class="roi-desc">Participación recurrente sobre licencias de control de vuelo, volumen de mensajes y conectores.</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-num">48 Horas</div>
+          <div class="roi-label">Sandbox &amp; PoC a Medida</div>
+          <div class="roi-desc">Despliegue ágil de entornos de demostración personalizados para acelerar el ciclo de venta.</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- SECTION 2: PERFILES DE PARTNER (QUIÉN PUEDE SER PARTNER) -->
-  <section class="section-container" id="perfiles">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker text-accent">MODALIDADES DE ASOCIACIÓN</span>
-        <h2 class="section-h2">Diseñado para integradores, consultoras y fabricantes de software</h2>
-        <p class="section-lead">
-          Elige la vía de colaboración que mejor encaja con el modelo de negocio y las capacidades técnicas de tu organización.
-        </p>
-      </div>
-
-      <div class="partner-grid-2" style="grid-template-columns: repeat(3, 1fr);">
+      <!-- 3 Track Cards -->
+      <div class="partner-grid-2" style="grid-template-columns: repeat(3, 1fr); margin-top: 0;">
         <!-- Track 1: System Integrators -->
         <div class="partner-card">
           <span class="partner-tier-badge">INTEGRADORES &amp; CONSULTORAS IT</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 14px;">System Integrators &amp; Big 4</h3>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
-            Para firmas que implantan arquitecturas en Banca, Seguros, Telecomunicaciones y Sector Público. Integra VARNATIR con Salesforce, ServiceNow, Microsoft Dynamics, Genesys o SAP.
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">System Integrators &amp; Big 4</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin: 10px 0 14px;">20% &ndash; 30% <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Para firmas que implantan arquitecturas en Banca, Seguros, Telecomunicaciones y Sector Público. Integra VARNATIR con Salesforce, ServiceNow, Genesys y SAP.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
-            <li>Margen preferente de licencia y revenue share</li>
-            <li>Apoyo de preventa técnica en comités CISO/DPO</li>
-            <li>Protección de cuentas (Deal Registration) blindada</li>
+          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+            <li>Margen preferente de licencia y revenue share recurrente</li>
+            <li>Apoyo de preventa técnica en comités CISO/DPO del cliente</li>
+            <li>Protección de cuentas (Deal Registration) blindada a 12 meses</li>
           </ul>
           <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Postular como Integrador</a>
         </div>
@@ -291,14 +223,15 @@
         <!-- Track 2: ISVs & Software Vendors -->
         <div class="partner-card">
           <span class="partner-tier-badge cyan">ISVS &amp; FABRICANTES SOFTWARE</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 14px;">ISVs &amp; Soluciones B2B</h3>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
-            Incorpora mensajería instantánea e IA regulada a tu propio producto vía API/SDK headless. Hereda el cumplimiento ENS Media y DORA sin desarrollar motores criptográficos internos.
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">ISVs &amp; Soluciones B2B</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #38BDF8; margin: 10px 0 14px;">OEM &amp; Wholesale <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">licensing</span></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Incorpora mensajería instantánea e IA regulada a tu propio producto vía API/SDK headless. Cumple ENS Media y DORA sin desarrollar motores criptográficos internos.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
-            <li>Licenciamiento OEM y Wholesale flexible</li>
-            <li>Arquitectura multitenant con aislamiento lógico</li>
-            <li>Soporte de ingeniería Nivel 3 y roadmap conjunto</li>
+          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+            <li>Licenciamiento OEM y Wholesale altamente flexible</li>
+            <li>Arquitectura multitenant con aislamiento lógico y soberanía</li>
+            <li>Soporte de ingeniería Nivel 3 y co-diseño de roadmap</li>
           </ul>
           <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Postular como ISV</a>
         </div>
@@ -306,14 +239,15 @@
         <!-- Track 3: Security & Compliance Advisors -->
         <div class="partner-card">
           <span class="partner-tier-badge gold">CIBERSEGURIDAD &amp; DPO ADVISORS</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 14px;">Advisors &amp; Auditores CISO</h3>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
-            Para despachos jurídicos, auditores de seguridad y DPOs externos que auditan organizaciones. Prescribe la única solución de remediación activa frente al Shadow Messaging clandestino.
+          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Advisors &amp; Auditores CISO</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #EAB308; margin: 10px 0 14px;">Prescripción <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">recurrente</span></div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Para despachos jurídicos, auditores de seguridad y DPOs externos. Prescribe la única solución de remediación activa frente al Shadow Messaging clandestino.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
-            <li>Comisión de prescripción directa recurrente</li>
-            <li>Kits de Evaluación de Impacto (EIPD) validados</li>
-            <li>Acreditación de Metodología de Gobernanza</li>
+          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+            <li>Comisión de prescripción directa recurrente garantizada</li>
+            <li>Kits de Evaluación de Impacto (EIPD) y pliegos validados</li>
+            <li>Acreditación metodológica avalada por Cátedra CBC-UV</li>
           </ul>
           <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Postular como Advisor</a>
         </div>
@@ -321,260 +255,174 @@
     </div>
   </section>
 
-  <!-- SECTION 3: EL TOOLKIT DEL PARTNER (HABILITACIÓN Y RECURSOS) -->
-  <section class="section-container bg-surface-alt">
+  <!-- BLOQUE 3: DOBLE COLUMNA (VALOR + FORMULARIO DE CONTACTO) -->
+  <section class="section-container" id="postular">
     <div class="container">
-      <div class="section-header">
-        <span class="section-kicker text-accent">RECURSOS Y HABILITACIÓN PARA EL CANAL</span>
-        <h2 class="section-h2">Todo lo necesario para cerrar, desplegar y escalar con éxito</h2>
-        <p class="section-lead">
-          No te entregamos un software y te dejamos solo. Te equipamos con ingeniería, preventa y credenciales de primer nivel para liderar el mercado.
-        </p>
-      </div>
-
-      <div class="partner-toolkit-grid">
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="partner-split-layout">
+        <!-- Columna Izquierda: Información de Valor y Garantías -->
+        <div class="partner-split-info">
+          <div>
+            <span class="section-kicker text-accent">ÚNETE AL PROGRAMA DE CANAL</span>
+            <h2 class="section-h2">Solicita tu incorporación como Partner oficial de VARNATIR</h2>
           </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Acompañamiento en Comités CISO</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Nuestros arquitectos de seguridad entran contigo a las reuniones técnicas de tu cliente para resolver cada duda sobre cifrado, BYOK y cumplimiento ENS Media.
+          <p class="section-lead">
+            Completa los datos de tu empresa. Un Partner Account Manager se pondrá en contacto contigo en menos de 24 horas para programar tu sesión de habilitación y activar tu entorno sandbox de pruebas.
           </p>
-        </div>
 
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Sandbox y Pilotos PoC en 48 Horas</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Entornos de pruebas aislados para montar demostraciones personalizadas con la marca de tu cliente y flujos transaccionales reales sin coste de preventa.
-          </p>
-        </div>
-
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Kits de Compliance &amp; Pliegos AAPP</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Plantillas de Evaluación de Impacto (EIPD), pliegos técnicos de prescripciones para licitaciones públicas y matrices normativas listas para presentar.
-          </p>
-        </div>
-
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Protección de Cuentas (Deal Reg)</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Registro de oportunidades comercial garantizado. Blindamos tus cuentas frente a otros canales durante 12 meses renovables con soporte dedicado.
-          </p>
-        </div>
-
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Certificación Cátedra CBC-UV</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Capacita a tus consultores e ingenieros en la metodología científica de gobernanza conversacional desarrollada con la Cátedra de la Universidad de Valencia.
-          </p>
-        </div>
-
-        <div class="toolkit-item">
-          <div class="toolkit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h4 style="font-size: 1.15rem; margin-bottom: 10px;">Meta Solution Partner Priority</h4>
-          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-            Acceso preferente para verificación de números de teléfono oficiales, aprobación ágil de plantillas y gestión coordinada de tickets con Meta Business Engineering.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: NIVELES DEL PROGRAMA DE PARTNERS -->
-  <section class="section-container" id="niveles">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker text-accent">ESTRUCTURA DEL PROGRAMA</span>
-        <h2 class="section-h2">Niveles de Alianza y Modelo de Beneficios</h2>
-        <p class="section-lead">
-          Un marco transparente con márgenes crecientes conforme tu equipo desarrolla práctica y volumen de proyectos gobernados.
-        </p>
-      </div>
-
-      <div class="partner-grid-2" style="grid-template-columns: repeat(3, 1fr); margin-top: 40px;">
-        <!-- Level 1: Registered -->
-        <div class="partner-card">
-          <span class="partner-tier-badge">NIVEL 1 · REGISTERED</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Registered Partner</h3>
-          <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin: 12px 0;">15% <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
-            Para organizaciones que inician su práctica y quieren validar la solución en sus primeras cuentas.
-          </p>
-          <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; padding-left: 16px; margin-bottom: 24px;">
-            <li>Acceso al Portal de Partners y Sandbox</li>
-            <li>Registro de oportunidades (Deal Reg)</li>
-            <li>Kit de ventas y documentación técnica</li>
-            <li>Soporte técnico estándar</li>
-          </ul>
-        </div>
-
-        <!-- Level 2: Certified Solution Partner -->
-        <div class="partner-card" style="border-color: rgba(95, 211, 184, 0.5); box-shadow: 0 12px 30px rgba(95, 211, 184, 0.08);">
-          <span class="partner-tier-badge cyan">NIVEL 2 · CERTIFIED (RECOMENDADO)</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Certified Partner</h3>
-          <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent); margin: 12px 0;">20% &ndash; 25% <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
-            Para consultoras e integradores con práctica activa de mensajería, CRM y ciberseguridad.
-          </p>
-          <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; padding-left: 16px; margin-bottom: 24px;">
-            <li><strong>Todo lo del nivel Registered +</strong></li>
-            <li>Acompañamiento en preventa CISO / DPO</li>
-            <li>Asignación de leads cualificados de canal</li>
-            <li>2 certificaciones oficiales incluidas</li>
-            <li>Sandbox ilimitado para PoCs</li>
-          </ul>
-        </div>
-
-        <!-- Level 3: Premier Strategic -->
-        <div class="partner-card">
-          <span class="partner-tier-badge gold">NIVEL 3 · PREMIER STRATEGIC</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Premier Strategic</h3>
-          <div style="font-size: 1.8rem; font-weight: 800; color: #EAB308; margin: 12px 0;">Hasta 30% <span style="font-size: 0.95rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
-            Para grandes integradores globales e ISVs con despliegues a escala de misión crítica.
-          </p>
-          <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; padding-left: 16px; margin-bottom: 24px;">
-            <li><strong>Todo lo del nivel Certified +</strong></li>
-            <li>Arquitecto de Soluciones dedicado</li>
-            <li>Co-desarrollo de conectores y roadmap prioritario</li>
-            <li>Fondo conjunto de co-marketing y patrocinio</li>
-            <li>SLA de soporte crítico 24/7</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: FORMULARIO DE POSTULACIÓN DE PARTNERS -->
-  <section class="section-container bg-surface-alt" id="postular">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker text-accent">ÚNETE AL PROGRAMA DE CANAL</span>
-        <h2 class="section-h2">Solicita tu incorporación como Partner de VARNATIR</h2>
-        <p class="section-lead">
-          Completa los datos de tu empresa. Un Partner Account Manager se pondrá en contacto contigo en menos de 24 horas para programar tu sesión de habilitación y habilitar tu sandbox.
-        </p>
-      </div>
-
-      <div class="partner-form-wrapper">
-        <form id="partner-apply-form" onsubmit="handlePartnerSubmit(event)">
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="p-name">NOMBRE Y APELLIDOS *</label>
-              <input type="text" id="p-name" required placeholder="Ej. Laura Gómez" />
+          <div class="partner-perks-list">
+            <div class="partner-perk-item">
+              <div class="partner-perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="partner-perk-text">
+                <h4>Acompañamiento en Comités CISO</h4>
+                <p>Nuestros arquitectos de seguridad entran contigo a las reuniones técnicas para resolver dudas sobre cifrado, BYOK y certificación ENS Media.</p>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="p-email">EMAIL CORPORATIVO *</label>
-              <input type="email" id="p-email" required placeholder="laura@consultora.com" />
+
+            <div class="partner-perk-item">
+              <div class="partner-perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="partner-perk-text">
+                <h4>Sandbox &amp; Pilotos PoC en 48 Horas</h4>
+                <p>Entornos aislados multitenant para montar demostraciones personalizadas con la marca de tu cliente y flujos reales sin coste de preventa.</p>
+              </div>
+            </div>
+
+            <div class="partner-perk-item">
+              <div class="partner-perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="partner-perk-text">
+                <h4>Protección de Cuentas (Deal Registration)</h4>
+                <p>Blindamos tus cuentas comerciales durante 12 meses renovables, garantizando tu margen y prioridad absoluta.</p>
+              </div>
+            </div>
+
+            <div class="partner-perk-item">
+              <div class="partner-perk-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="partner-perk-text">
+                <h4>Solution Partner Oficial de Meta</h4>
+                <p>Verificación preferente de números WhatsApp Business Cloud API, homologación ágil de plantillas y soporte de ingeniería Tier-1.</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="p-company">EMPRESA / ORGANIZACIÓN *</label>
-              <input type="text" id="p-company" required placeholder="Nombre de tu firma o consultora" />
-            </div>
-            <div class="form-group">
-              <label for="p-website">SITIO WEB CORPORATIVO</label>
-              <input type="url" id="p-website" placeholder="https://tuempresa.com" />
-            </div>
+          <div class="partner-direct-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <p>¿Tienes una licitación pública o proyecto urgente? Escríbenos directamente a <a href="mailto:partners@varnatir.com">partners@varnatir.com</a>.</p>
           </div>
+        </div>
 
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="p-country">PAÍS DONDE OPERAN *</label>
-              <select id="p-country" required>
-                <option value="">Selecciona el país principal *</option>
-                <option value="ES">España</option>
-                <option value="MX">México</option>
-                <option value="CO">Colombia</option>
-                <option value="AR">Argentina</option>
-                <option value="CL">Chile</option>
-                <option value="PE">Perú</option>
-                <option value="US">United States / USA</option>
-                <option value="UK">United Kingdom</option>
-                <option value="DE">Deutschland (Germany)</option>
-                <option value="FR">France</option>
-                <option value="IT">Italia</option>
-                <option value="PT">Portugal</option>
-                <option value="BR">Brasil</option>
-                <option value="EU">Unión Europea (Otro país / Other EU)</option>
-                <option value="LATAM">Latinoamérica (Otro país / Other LATAM)</option>
-                <option value="GLOBAL">Global / Multi-Jurisdiction</option>
-              </select>
+        <!-- Columna Derecha: Formulario de Contacto -->
+        <div class="partner-split-form">
+          <h3 style="margin-top: 0;">Formulario de Postulación de Canal</h3>
+          <form id="partner-apply-form" onsubmit="handlePartnerSubmit(event)">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="p-name">NOMBRE Y APELLIDOS *</label>
+                <input type="text" id="p-name" required placeholder="Ej. Laura Gómez" />
+              </div>
+              <div class="form-group">
+                <label for="p-email">EMAIL CORPORATIVO *</label>
+                <input type="email" id="p-email" required placeholder="laura@consultora.com" />
+              </div>
             </div>
-            <div class="form-group">
-              <label for="p-phone">TELÉFONO / WHATSAPP DE CONTACTO *</label>
-              <input type="tel" id="p-phone" required placeholder="Ej. +34 600 000 000" />
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="p-company">EMPRESA / ORGANIZACIÓN *</label>
+                <input type="text" id="p-company" required placeholder="Nombre de tu firma o consultora" />
+              </div>
+              <div class="form-group">
+                <label for="p-website">SITIO WEB CORPORATIVO</label>
+                <input type="url" id="p-website" placeholder="https://tuempresa.com" />
+              </div>
             </div>
-          </div>
 
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="p-type">PERFIL DE PARTNER *</label>
-              <select id="p-type" required>
-                <option value="">Selecciona una opción</option>
-                <option value="integrador">Integrador de Sistemas / IT Consultancy</option>
-                <option value="isv">ISV / Fabricante de Software B2B</option>
-                <option value="ciberseguridad">Consultora de Ciberseguridad / DPO Advisor</option>
-                <option value="agencia">Agencia de Soluciones Conversacionales</option>
-                <option value="telco">Telco / Cloud Service Provider</option>
-                <option value="otro">Otro modelo de canal</option>
-              </select>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="p-country">PAÍS DONDE OPERAN *</label>
+                <select id="p-country" required>
+                  <option value="">Selecciona el país principal *</option>
+                  <option value="ES">España</option>
+                  <option value="MX">México</option>
+                  <option value="CO">Colombia</option>
+                  <option value="AR">Argentina</option>
+                  <option value="CL">Chile</option>
+                  <option value="PE">Perú</option>
+                  <option value="US">United States / USA</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="DE">Deutschland (Germany)</option>
+                  <option value="FR">France</option>
+                  <option value="IT">Italia</option>
+                  <option value="PT">Portugal</option>
+                  <option value="BR">Brasil</option>
+                  <option value="EU">Unión Europea (Otro país / Other EU)</option>
+                  <option value="LATAM">Latinoamérica (Otro país / Other LATAM)</option>
+                  <option value="GLOBAL">Global / Multi-Jurisdiction</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="p-phone">TELÉFONO / WHATSAPP *</label>
+                <input type="tel" id="p-phone" required placeholder="Ej. +34 600 000 000" />
+              </div>
             </div>
-            <div class="form-group">
-              <label for="p-focus">SECTOR DE FOCO PRIORITARIO</label>
-              <select id="p-focus">
-                <option value="banca">Banca &amp; Servicios Financieros (DORA)</option>
-                <option value="seguros">Seguros &amp; Peritajes</option>
-                <option value="govtech">Sector Público &amp; AAPP (ENS Media)</option>
-                <option value="salud">Salud &amp; Hospitales (RGPD Art. 9)</option>
-                <option value="defensa">Defensa &amp; Seguridad de Misión Crítica</option>
-                <option value="retail">Retail Transaccional</option>
-                <option value="multisector">Multisectorial</option>
-              </select>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="p-type">PERFIL DE PARTNER *</label>
+                <select id="p-type" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="integrador">Integrador de Sistemas / IT Consultancy</option>
+                  <option value="isv">ISV / Fabricante de Software B2B</option>
+                  <option value="ciberseguridad">Consultora de Ciberseguridad / DPO Advisor</option>
+                  <option value="agencia">Agencia de Soluciones Conversacionales</option>
+                  <option value="telco">Telco / Cloud Service Provider</option>
+                  <option value="otro">Otro modelo de canal</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="p-focus">SECTOR PRIORITARIO</label>
+                <select id="p-focus">
+                  <option value="banca">Banca &amp; Servicios Financieros (DORA)</option>
+                  <option value="seguros">Seguros &amp; Peritajes</option>
+                  <option value="govtech">Sector Público &amp; AAPP (ENS Media)</option>
+                  <option value="salud">Salud &amp; Hospitales (RGPD Art. 9)</option>
+                  <option value="defensa">Defensa &amp; Seguridad de Misión Crítica</option>
+                  <option value="retail">Retail Transaccional</option>
+                  <option value="multisector">Multisectorial</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="p-notes">OPORTUNIDAD INMEDIATA O CASO DE USO EN CURSO (OPCIONAL)</label>
-            <textarea id="p-notes" rows="3" placeholder="Cuéntanos si tienes un proyecto en curso bloqueado por DPO o requisitos que buscas resolver..." style="width: 100%; background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; color: var(--text-primary); font-family: inherit; font-size: 0.95rem; resize: vertical;"></textarea>
-          </div>
+            <div class="form-group">
+              <label for="p-notes">OPORTUNIDAD INMEDIATA O CASO DE USO (OPCIONAL)</label>
+              <textarea id="p-notes" rows="3" placeholder="Cuéntanos si tienes un proyecto en curso o requerimientos técnicos a resolver..." style="width: 100%; background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; color: var(--text-primary); font-family: inherit; font-size: 0.95rem; resize: vertical;"></textarea>
+            </div>
 
-          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 12px;">
-            Solicitar Acceso al Canal &rarr;
-          </button>
-          
-          <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 16px;">
-            Tus datos se tratarán conforme al RGPD exclusivamente para la gestión de la relación de partner. Sin spam ni cesión a terceros.
-          </p>
-        </form>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 12px;">
+              Solicitar Acceso al Canal &rarr;
+            </button>
+            
+            <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 16px;">
+              Tus datos se tratarán conforme al RGPD exclusivamente para la gestión de la relación de partner. Sin spam ni cesión a terceros.
+            </p>
+          </form>
 
-        <div id="partner-success-msg" style="display: none; text-align: center; padding: 40px 20px;">
-          <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(95, 211, 184, 0.15); color: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <div id="partner-success-msg" style="display: none; text-align: center; padding: 40px 20px;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(95, 211, 184, 0.15); color: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Solicitud Recibida con Éxito</h3>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 24px; line-height: 1.6;">
+              Tu Partner Account Manager revisará la candidatura y coordinará tu sesión de habilitación y acceso a Sandbox en menos de 24 horas laborables.
+            </p>
+            <a href="index.html" class="btn btn-ghost">Volver al Inicio</a>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Solicitud Recibida con Éxito</h3>
-          <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 24px; line-height: 1.6;">
-            Tu Partner Account Manager revisará la candidatura y coordinará tu sesión de habilitación y acceso a Sandbox en menos de 24 horas laborables.
-          </p>
-          <a href="index.html" class="btn btn-ghost">Volver al Inicio</a>
         </div>
       </div>
     </div>
@@ -608,7 +456,7 @@
         <h5>Ecosistema &amp; Canal</h5>
         <div class="footer-links">
           <a href="become-a-partner.html" style="color: var(--accent); font-weight: 600;">Programa de Partners</a>
-          <a href="../catedra.html">Cátedra CBC-UV</a>
+          <a href="catedra.html">Cátedra CBC-UV</a>
           <a href="about.html">Sobre el Modelo Propio</a>
           <a href="industries.html">Hub de Industrias</a>
         </div>
