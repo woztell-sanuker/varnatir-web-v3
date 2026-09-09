@@ -15,69 +15,57 @@
 
   <link rel="stylesheet" href="styles.css?v=3.2" />
   <style>
-    /* Partner-specific adjustments */
-    .partner-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-top: 36px;
-    }
-    .partner-card {
+    /* Partner track cards & specific styles */
+    .partner-track-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 32px 28px;
       position: relative;
       transition: all var(--transition-base);
+      box-sizing: border-box;
+      height: 100%;
     }
-    .partner-card:hover {
+    .partner-track-card:hover {
       border-color: var(--border-hover);
       transform: translateY(-3px);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
     }
-    .partner-tier-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-      background: rgba(95, 211, 184, 0.12);
-      color: var(--accent);
-      border: 1px solid rgba(95, 211, 184, 0.25);
+    .partner-track-card .partner-tier-badge {
+      align-self: flex-start;
+      margin-bottom: 14px;
     }
-    .partner-tier-badge.gold {
-      background: rgba(234, 179, 8, 0.12);
-      color: #EAB308;
-      border-color: rgba(234, 179, 8, 0.28);
+    .partner-track-card h3 {
+      font-size: 1.35rem;
+      margin: 0 0 8px;
+      color: var(--text);
     }
-    .partner-tier-badge.cyan {
-      background: rgba(56, 189, 248, 0.12);
-      color: #38BDF8;
-      border-color: rgba(56, 189, 248, 0.28);
-    }
-    .partner-stat-highlight {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
+    .partner-track-card .partner-rev-stat {
+      font-size: 1.55rem;
       font-weight: 800;
-      color: var(--text-primary);
-      margin: 8px 0;
-      line-height: 1.1;
+      margin: 10px 0 14px;
+      line-height: 1.2;
     }
-    .partner-stat-highlight span {
-      color: var(--accent);
+    .partner-track-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
     }
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .partner-track-card ul {
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      line-height: 1.7;
+      padding-left: 18px;
+      margin: 0 0 24px;
     }
-    @media (max-width: 768px) {
-      .form-row-2 {
-        grid-template-columns: 1fr;
-      }
+    .partner-track-card .btn {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
     }
   </style>
 </head>
@@ -203,53 +191,53 @@
       </div>
 
       <!-- 3 Track Cards -->
-      <div class="partner-grid-2" style="grid-template-columns: repeat(3, 1fr); margin-top: 0;">
+      <div class="partner-grid-2">
         <!-- Track 1: System Integrators -->
-        <div class="partner-card">
+        <div class="partner-track-card">
           <span class="partner-tier-badge">INTEGRATORS &amp; IT CONSULTANCIES</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">System Integrators &amp; Big 4</h3>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin: 10px 0 14px;">20% &ndash; 30% <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+          <h3>System Integrators &amp; Big 4</h3>
+          <div class="partner-rev-stat" style="color: var(--accent);">20% &ndash; 30% <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">rev share</span></div>
+          <p>
             For consultancies architecting workflows in Banking, Insurance, Telecommunications, and Public Sector. Integrate VARNATIR with Salesforce, ServiceNow, Genesys, and SAP.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+          <ul>
             <li>Preferential license margins and recurring revenue share</li>
             <li>Joint technical pre-sales defense in client CISO/DPO sessions</li>
             <li>Strict 12-month deal registration protection</li>
           </ul>
-          <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Apply as Integrator</a>
+          <a href="#postular" class="btn btn-ghost btn-sm">Apply as Integrator</a>
         </div>
 
         <!-- Track 2: ISVs & Software Vendors -->
-        <div class="partner-card">
+        <div class="partner-track-card">
           <span class="partner-tier-badge cyan">ISVS &amp; SOFTWARE VENDORS</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">ISVs &amp; B2B Platforms</h3>
-          <div style="font-size: 1.5rem; font-weight: 800; color: #38BDF8; margin: 10px 0 14px;">OEM &amp; Wholesale <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">licensing</span></div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+          <h3>ISVs &amp; B2B Platforms</h3>
+          <div class="partner-rev-stat" style="color: #38BDF8;">OEM &amp; Wholesale <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">licensing</span></div>
+          <p>
             Embed regulated instant messaging and governed AI directly into your SaaS product via headless API/SDK. Inherit ENS Media and DORA compliance without internal crypto engines.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+          <ul>
             <li>Highly flexible OEM and Wholesale licensing models</li>
             <li>Multitenant architecture with logical isolation and data sovereignty</li>
             <li>Level 3 engineering escalations and joint roadmap planning</li>
           </ul>
-          <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Apply as ISV</a>
+          <a href="#postular" class="btn btn-ghost btn-sm">Apply as ISV</a>
         </div>
 
         <!-- Track 3: Security & Compliance Advisors -->
-        <div class="partner-card">
+        <div class="partner-track-card">
           <span class="partner-tier-badge gold">CYBERSECURITY &amp; DPO ADVISORS</span>
-          <h3 style="font-size: 1.35rem; margin-bottom: 8px;">Advisors &amp; CISO Auditors</h3>
-          <div style="font-size: 1.5rem; font-weight: 800; color: #EAB308; margin: 10px 0 14px;">Recurring Referral <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">fee</span></div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+          <h3>Advisors &amp; CISO Auditors</h3>
+          <div class="partner-rev-stat" style="color: #EAB308;">Recurring Referral <span style="font-size: 0.85rem; font-weight: 400; color: var(--text-muted);">fee</span></div>
+          <p>
             For law firms, security auditors, and external DPOs advising regulated organizations. Prescribe active remediation against clandestine Shadow IT messaging.
           </p>
-          <ul style="color: var(--text-secondary); font-size: 0.86rem; line-height: 1.7; padding-left: 18px; margin-bottom: 24px;">
+          <ul>
             <li>Guaranteed recurring referral commissions on enterprise accounts</li>
             <li>Pre-validated Data Protection Impact Assessment (DPIA) packages</li>
             <li>Methodology certification backed by CBC-UV Academic Chair</li>
           </ul>
-          <a href="#postular" class="btn btn-ghost btn-sm" style="width: 100%; text-align: center;">Apply as Advisor</a>
+          <a href="#postular" class="btn btn-ghost btn-sm">Apply as Advisor</a>
         </div>
       </div>
     </div>
@@ -430,50 +418,50 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand-logo" aria-label="VARNATIR">
-          <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="28" height="24" aria-hidden="true">
-            <path fill="url(#v-iso-ptnr)" d="m35.3,67.03l10.48,24.47.33.76c.11.26.22.51.31.7l.58,1.26c.39.84.86,1.64,1.31,2.45.51.78.96,1.59,1.54,2.33.28.37.54.76.83,1.13l.9,1.08c2.41,2.89,5.41,5.31,8.69,7.32,3.31,1.98,6.97,3.43,10.8,4.39,3.83.96,7.88,1.33,11.93,1.26,8.14-.17,16.39-2.34,24.26-5.61,3.97-1.62,7.64-3.52,11.16-5.86,3.51-2.32,6.73-5.07,9.66-8.11,5.8-6.12,10.3-13.63,12.51-21.88,2.24-8.22,2.17-17.18-.76-25.37-.73-2.02-1.64-4.06-2.51-6.1l-2.62-6.12-5.24-12.24,6.09,11.84,3.04,5.92c1.01,1.97,2.05,3.92,2.98,6.01,3.67,8.33,4.47,17.88,2.67,26.91-1.76,9.07-6.05,17.59-11.95,24.76-2.98,3.57-6.33,6.86-10.03,9.7-3.68,2.85-7.76,5.34-11.88,7.36-8.22,4.1-17.22,7.25-26.83,8.14-4.8.42-9.67.33-14.54-.51-4.85-.84-9.65-2.35-14.13-4.61-4.46-2.3-8.68-5.24-12.25-8.91l-1.33-1.39c-.43-.47-.83-.97-1.25-1.46-.85-.96-1.58-2.03-2.35-3.06-.71-1.07-1.43-2.15-2.07-3.27l-.94-1.7-.42-.79-.38-.74-12.18-23.67,13.57-6.39Z"/>
-          </svg>
-          <span class="logo-text">VARNATIR</span>
-        </a>
-        <p class="footer-tagline">Managed conversational infrastructure with active flight control and complete channel independence.</p>
-        <div class="footer-meta-pill">Official Meta Solution Partner</div>
-      </div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="VARNATIR">
+            <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="28" height="24" aria-hidden="true">
+              <path fill="url(#v-iso-ptnr)" d="m35.3,67.03l10.48,24.47.33.76c.11.26.22.51.31.7l.58,1.26c.39.84.86,1.64,1.31,2.45.51.78.96,1.59,1.54,2.33.28.37.54.76.83,1.13l.9,1.08c2.41,2.89,5.41,5.31,8.69,7.32,3.31,1.98,6.97,3.43,10.8,4.39,3.83.96,7.88,1.33,11.93,1.26,8.14-.17,16.39-2.34,24.26-5.61,3.97-1.62,7.64-3.52,11.16-5.86,3.51-2.32,6.73-5.07,9.66-8.11,5.8-6.12,10.3-13.63,12.51-21.88,2.24-8.22,2.17-17.18-.76-25.37-.73-2.02-1.64-4.06-2.51-6.1l-2.62-6.12-5.24-12.24,6.09,11.84,3.04,5.92c1.01,1.97,2.05,3.92,2.98,6.01,3.67,8.33,4.47,17.88,2.67,26.91-1.76,9.07-6.05,17.59-11.95,24.76-2.98,3.57-6.33,6.86-10.03,9.7-3.68,2.85-7.76,5.34-11.88,7.36-8.22,4.1-17.22,7.25-26.83,8.14-4.8.42-9.67.33-14.54-.51-4.85-.84-9.65-2.35-14.13-4.61-4.46-2.3-8.68-5.24-12.25-8.91l-1.33-1.39c-.43-.47-.83-.97-1.25-1.46-.85-.96-1.58-2.03-2.35-3.06-.71-1.07-1.43-2.15-2.07-3.27l-.94-1.7-.42-.79-.38-.74-12.18-23.67,13.57-6.39Z"/>
+            </svg>
+            <span class="logo-text">VARNATIR</span>
+          </a>
+          <p class="footer-tagline">Managed conversational infrastructure with active flight control and complete channel independence.</p>
+          <div class="footer-meta-pill">Official Meta Solution Partner</div>
+        </div>
 
-      <div class="footer-col">
-        <h5>Platform</h5>
-        <div class="footer-links">
-          <a href="solution.html">Solution &amp; Flight Control</a>
-          <a href="ia.html">AI &amp; Anonymization</a>
-          <a href="compliance.html">Compliance &amp; ENS Media</a>
-          <a href="pricing.html">Pricing &amp; Plans</a>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <div class="footer-links">
+            <a href="solution.html">Solution &amp; Flight Control</a>
+            <a href="ia.html">AI &amp; Anonymization</a>
+            <a href="compliance.html">Compliance &amp; ENS Media</a>
+            <a href="pricing.html">Pricing &amp; Plans</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ecosystem &amp; Channel</h5>
+          <div class="footer-links">
+            <a href="become-a-partner.html" style="color: var(--accent); font-weight: 600;">Partner Program</a>
+            <a href="catedra.html">CBC-UV Academic Chair</a>
+            <a href="about.html">About Model</a>
+            <a href="industries.html">Industry Hub</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <div class="footer-links">
+            <a href="industries-enterprise.html">Banking &amp; Regulated Markets</a>
+            <a href="industries-govtech.html">GovTech &amp; Public Sector</a>
+            <a href="industries-defensa.html">Defense &amp; Security</a>
+          </div>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Ecosystem &amp; Channel</h5>
-        <div class="footer-links">
-          <a href="become-a-partner.html" style="color: var(--accent); font-weight: 600;">Partner Program</a>
-          <a href="catedra.html">CBC-UV Academic Chair</a>
-          <a href="about.html">About Model</a>
-          <a href="industries.html">Industry Hub</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h5>Industries</h5>
-        <div class="footer-links">
-          <a href="industries-enterprise.html">Banking &amp; Regulated Markets</a>
-          <a href="industries-govtech.html">GovTech &amp; Public Sector</a>
-          <a href="industries-defensa.html">Defense &amp; Security</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div class="footer-bottom">
         <div>&copy; 2026 VARNATIR. All rights reserved.</div>
         <div class="footer-legal">
           <a href="compliance.html#legal-notice">Legal Notice</a>
