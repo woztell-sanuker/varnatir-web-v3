@@ -741,7 +741,10 @@ div[id].section-container,
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  margin-bottom: 0;
+}
+.hero-actions:not(:last-child) {
+  margin-bottom: 40px;
 }
 .hero-proof-bar {
   display: grid;
