@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &amp; Data Sovereignty · VARNATIR</title>
+
+  <!-- Canonical & Alternate Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://varnatir.com/ia.html" />
+  <link rel="alternate" hreflang="es" href="https://varnatir.com/es/ia.html" />
+  
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800,900&f[]=jetbrains-mono@400,500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span class="pulse-dot"></span>
+      <span class="top-bar-text">CIBEC 2023 Research Foundation: <strong>Govern the conversation, not the channel</strong></span>
+      <a href="catedra.html" class="top-bar-link">Read research &rarr;</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="navbar">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+                <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="32" height="28" aria-hidden="true">
+          <defs>
+            <linearGradient id="v-iso-hdr" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#185359"/>
+              <stop offset="50%" stop-color="#2B7E6E"/>
+              <stop offset="100%" stop-color="#4B145F"/>
+            </linearGradient>
+            <linearGradient id="v-iso-hdr-rev" x1="100%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#4B145F"/>
+              <stop offset="50%" stop-color="#742296"/>
+              <stop offset="100%" stop-color="#185359"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#v-iso-hdr)" d="m35.3,67.03l10.48,24.47.33.76c.11.26.22.51.31.7l.58,1.26c.39.84.86,1.64,1.31,2.45.51.78.96,1.59,1.54,2.33.28.37.54.76.83,1.13l.9,1.08c2.41,2.89,5.41,5.31,8.69,7.32,3.31,1.98,6.97,3.43,10.8,4.39,3.83.96,7.88,1.33,11.93,1.26,8.14-.17,16.39-2.34,24.26-5.61,3.97-1.62,7.64-3.52,11.16-5.86,3.51-2.32,6.73-5.07,9.66-8.11,5.8-6.12,10.3-13.63,12.51-21.88,2.24-8.22,2.17-17.18-.76-25.37-.73-2.02-1.64-4.06-2.51-6.1l-2.62-6.12-5.24-12.24,6.09,11.84,3.04,5.92c1.01,1.97,2.05,3.92,2.98,6.01,3.67,8.33,4.47,17.88,2.67,26.91-1.76,9.07-6.05,17.59-11.95,24.76-2.98,3.57-6.33,6.86-10.03,9.7-3.68,2.85-7.76,5.34-11.88,7.36-8.22,4.1-17.22,7.25-26.83,8.14-4.8.42-9.67.33-14.54-.51-4.85-.84-9.65-2.35-14.13-4.61-4.46-2.3-8.68-5.24-12.25-8.91l-1.33-1.39c-.43-.47-.83-.97-1.25-1.46-.85-.96-1.58-2.03-2.35-3.06-.71-1.07-1.43-2.15-2.07-3.27l-.94-1.7-.42-.79-.38-.74-12.18-23.67,13.57-6.39Z"/>
+          <path fill="url(#v-iso-hdr-rev)" d="m109.87,56.77l-10.48-24.47-.33-.76c-.11-.26-.22-.51-.31-.7l-.58-1.26c-.39-.84-.86-1.64-1.31-2.45-.51-.78-.96-1.59-1.54-2.33-.28-.37-.54-.76-.83-1.13l-.9-1.08c-2.41-2.89-5.41-5.31-8.69-7.32-3.31-1.98-6.97-3.43-10.8-4.39-3.83-.96-7.88-1.33-11.93-1.26-8.14.17-16.39,2.34-24.26,5.61-3.97,1.62-7.64,3.52-11.16,5.86-3.51,2.32-6.73,5.07-9.66,8.11-5.8,6.12-10.3,13.63-12.52,21.88-2.24,8.22-2.17,17.18.76,25.37.73,2.02,1.64,4.06,2.51,6.1l2.62,6.12,5.24,12.24-6.09-11.84-3.04-5.92c-1.01-1.97-2.05-3.92-2.98-6.01C-.07,68.8-.88,59.24.92,50.21c1.76-9.07,6.05-17.59,11.95-24.76,2.98-3.57,6.33-6.86,10.03-9.7,3.68-2.85,7.76-5.34,11.88-7.36C43,4.29,52,1.14,61.61.25c4.8-.42,9.67-.33,14.54.51,4.85.84,9.65,2.35,14.13,4.61,4.46,2.3,8.68,5.24,12.25,8.91l1.33,1.39c.43.47.83.97,1.25,1.46.85.96,1.58,2.03,2.35,3.06.71,1.07,1.43,2.15,2.07,3.27l.94,1.7.42.79.38.74,12.18,23.67-13.57,6.39Z"/>
+        </svg>
+        <span class="logo-text">VARNATIR</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="solution.html" class="nav-link">Solution</a>
+        <a href="ia.html" class="nav-link active" style="color: var(--accent);">AI &amp; Sovereignty</a>
+        <a href="industries.html" class="nav-link">Industries</a>
+        <a href="compliance.html" class="nav-link">Compliance</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" aria-label="Language Selector">
+          <a href="ia.html" class="lang-link active" data-lang="en">EN</a>
+          <a href="es/ia.html" class="lang-link" data-lang="es">ES</a>
+        </div>
+        <button class="btn btn-primary" onclick="openModal('AI &amp; Sovereignty')">Unlock a workflow</button>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero-section" style="padding: 70px 0 60px;">
+    <div class="hero-radial-glow"></div>
+    <div class="container hero-container">
+      <div class="eyebrow-wrapper">
+        <span class="badge-kicker">ENTERPRISE GENERATIVE AI</span>
+      </div>
+      <h1 class="hero-title active" style="max-width: 980px;">
+        Deploy AI across critical customer conversations.<br />
+        <span class="text-gradient">Without ceding data control*.</span>
+      </h1>
+      <p class="hero-subhead" style="max-width: 780px;">
+        Your DPO and Compliance Committee block generative AI because public and commercial models risk exposing trade secrets and customer PII. VARNATIR deploys an isolated pre-inference gateway that sanitizes PII in under 3ms — keeping encryption keys and data custody under your institutional control*.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Terminal Simulator -->
+  <section class="section-container bg-surface-alt">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-copy">
+          <span class="section-kicker text-accent">SUB-3MS PRE-INFERENCE GATEWAY</span>
+          <h2 class="section-h2">Pre-Model Anonymization: How It Operates</h2>
+          <p class="section-lead">
+            Raw text written by employees or customers never leaves your perimeter unredacted. VARNATIR dynamically substitutes sensitive entities with volatile synthetic tokens before triggering inference.
+          </p>
+          <ul class="feature-bullets">
+            <li>
+              <strong>Deterministic PII Interception:</strong> National IDs, bank accounts, credit cards, telephone numbers, and protected health identifiers are isolated at the gateway.
+            </li>
+            <li>
+              <strong>Inference over Sanitized Context:</strong> Large language models reason, classify, and formulate responses solely using anonymized semantic context.
+            </li>
+            <li>
+              <strong>Secure Local Re-hydration:</strong> Upon receiving model output, VARNATIR safely re-injects real customer entities within your secure perimeter prior to final message delivery.
+            </li>
+          </ul>
+
+          <div class="canonical-footnote" style="margin-top: 24px; padding: 12px 16px; background: rgba(95, 211, 184, 0.05); border-left: 2px solid var(--accent); border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">
+            * <strong>Mandatory preceptive note:</strong> No PII exposed. Data anonymized prior to reaching the model. Encryption keys and custody remain under your organization's control.
+          </div>
+        </div>
+
+        <div class="split-visual">
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">realtime-anonymization-stream.log</span>
+            </div>
+            <div class="terminal-body" style="font-size: 0.8rem; line-height: 1.7;">
+              <div class="log-line"><span class="log-tag">[00:00.012]</span> INBOUND: "Hello, I am Maria Gomez, ID 48291038X. Confirming IBAN update to ES91 2100 0418..."</div>
+              <div class="log-line text-warn"><span class="log-tag">[00:00.018]</span> DISPATCHER: Active PII detected (Full Name + National ID + IBAN).</div>
+              <div class="log-line text-accent"><span class="log-tag">[00:00.024]</span> MASK: Emitting ephemeral tokens [USER_REF_104], [DOC_ID_99], [ACCOUNT_ID_32].</div>
+              <div class="log-line"><span class="log-tag">[00:00.035]</span> LLM_GATEWAY: Dispatching sanitized prompt to selected model (BYOK):</div>
+              <div class="log-line" style="color: var(--text-faint); padding-left: 12px; border-left: 2px solid var(--border);">"User [USER_REF_104] requests change of [ACCOUNT_ID_32]. Classify intent and verify auth requirements."</div>
+              <div class="log-line text-accent"><span class="log-tag">[00:00.180]</span> LLM_RESPONSE: Intent = 'BANKING_UPDATE'. Policy = 'REQUIRES_2FA'.</div>
+              <div class="log-line text-green"><span class="log-tag">[00:00.192]</span> REHYDRATE: Merging secure template with encrypted local entities in memory.</div>
+              <div class="log-line text-green"><span class="log-tag">[00:00.205]</span> DISPATCH: Compliant WhatsApp confirmation sent to Maria Gomez. Zero PII shared with AI provider.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sovereign AI Gateway (BYOK) -->
+  <section class="section-container">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">INFRASTRUCTURE INDEPENDENCE</span>
+        <h2 class="section-h2">Multi-Model AI Gateway: Bring Your Own Key (BYOK)</h2>
+        <p class="section-lead">
+          Eliminate model vendor lock-in. Toggle dynamically between frontier foundation models or sovereign on-premise LLMs depending on regulatory jurisdiction.
+        </p>
+      </div>
+
+      <div class="model-cards-grid">
+        <div class="model-card">
+          <div class="card-tag">Tier 01</div>
+          <h3 class="card-title">Commercial Frontier Models</h3>
+          <p class="card-desc">
+            Directly connect Claude, Gemini, or GPT using your enterprise API credentials (BYOK). Benefit from peak generative capability backed by upstream origin anonymization.
+          </p>
+        </div>
+
+        <div class="model-card">
+          <div class="card-tag">Tier 02</div>
+          <h3 class="card-title">Sovereign On-Premise LLMs</h3>
+          <p class="card-desc">
+            For defense and public agencies requiring absolute territorial jurisdiction: route prompts to open-weights models deployed on your private servers or certified national clouds.
+          </p>
+        </div>
+
+        <div class="model-card">
+          <div class="card-tag">Tier 03</div>
+          <h3 class="card-title">Policy-Based Sensitivity Routing</h3>
+          <p class="card-desc">
+            Dynamic request dispatching: general customer inquiries route to fast low-latency models; regulated financial or clinical workflows trigger hardened high-assurance pipelines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidecar Copilot Agent -->
+  <section class="section-container bg-surface-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker text-accent">GOVERNED COPILOT</span>
+        <h2 class="section-h2">Sidecar Copilot: Real-Time Human Assistance Without Hallucinations</h2>
+        <p class="section-lead">
+          AI does not replace human relationship managers in sensitive decisions: it assists directly within the conversation thread, formulating grounded drafts and enforcing compliance pre-send.
+        </p>
+      </div>
+
+      <div class="compliance-matrix">
+        <div class="comp-col">
+          <div class="comp-header">
+            <h4>Deterministic Knowledge Retrieval</h4>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+            The sidecar copilot indexes your regulatory compliance manuals, approved product sheets, and operational SOPs. It drafts responses citing exact internal policy references.
+          </p>
+        </div>
+
+        <div class="comp-col">
+          <div class="comp-header">
+            <h4>Pre-Send Policy Enforcement</h4>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+            Before a customer representative clicks send, the sidecar scans the outbound message to ensure it respects disclaimer rules, avoids unapproved promises, and omits confidential IP.
+          </p>
+        </div>
+
+        <div class="comp-col">
+          <div class="comp-header">
+            <h4>Strict Scoped Ephemeral Memory</h4>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+            Copilot context is strictly bound to the active customer case. There is zero cross-tenant memory leakage between accounts and zero data utilization for model fine-tuning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <span class="cta-badge">DATA SOVEREIGNTY</span>
+        <h2 class="cta-h2">Put Generative AI to Work in Real Customer Channels</h2>
+        <p class="cta-subhead">Turn standard messaging into a high-yield transactional engine with mathematical proof that your data remains unexposed.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="openModal('AI Pilot')">Unlock an AI workflow</button>
+          <a href="compliance.html" class="btn btn-ghost btn-lg">Review ENS Media Compliance &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+                  <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="28" height="24" aria-hidden="true">
+          <path fill="url(#v-iso-hdr)" d="m35.3,67.03l10.48,24.47.33.76c.11.26.22.51.31.7l.58,1.26c.39.84.86,1.64,1.31,2.45.51.78.96,1.59,1.54,2.33.28.37.54.76.83,1.13l.9,1.08c2.41,2.89,5.41,5.31,8.69,7.32,3.31,1.98,6.97,3.43,10.8,4.39,3.83.96,7.88,1.33,11.93,1.26,8.14-.17,16.39-2.34,24.26-5.61,3.97-1.62,7.64-3.52,11.16-5.86,3.51-2.32,6.73-5.07,9.66-8.11,5.8-6.12,10.3-13.63,12.51-21.88,2.24-8.22,2.17-17.18-.76-25.37-.73-2.02-1.64-4.06-2.51-6.1l-2.62-6.12-5.24-12.24,6.09,11.84,3.04,5.92c1.01,1.97,2.05,3.92,2.98,6.01,3.67,8.33,4.47,17.88,2.67,26.91-1.76,9.07-6.05,17.59-11.95,24.76-2.98,3.57-6.33,6.86-10.03,9.7-3.68,2.85-7.76,5.34-11.88,7.36-8.22,4.1-17.22,7.25-26.83,8.14-4.8.42-9.67.33-14.54-.51-4.85-.84-9.65-2.35-14.13-4.61-4.46-2.3-8.68-5.24-12.25-8.91l-1.33-1.39c-.43-.47-.83-.97-1.25-1.46-.85-.96-1.58-2.03-2.35-3.06-.71-1.07-1.43-2.15-2.07-3.27l-.94-1.7-.42-.79-.38-.74-12.18-23.67,13.57-6.39Z"/>
+          <path fill="url(#v-iso-hdr-rev)" d="m109.87,56.77l-10.48-24.47-.33-.76c-.11-.26-.22-.51-.31-.7l-.58-1.26c-.39-.84-.86-1.64-1.31-2.45-.51-.78-.96-1.59-1.54-2.33-.28-.37-.54-.76-.83-1.13l-.9-1.08c-2.41-2.89-5.41-5.31-8.69-7.32-3.31-1.98-6.97-3.43-10.8-4.39-3.83-.96-7.88-1.33-11.93-1.26-8.14.17-16.39,2.34-24.26,5.61-3.97,1.62-7.64,3.52-11.16,5.86-3.51,2.32-6.73,5.07-9.66,8.11-5.8,6.12-10.3,13.63-12.52,21.88-2.24,8.22-2.17,17.18.76,25.37.73,2.02,1.64,4.06,2.51,6.1l2.62,6.12,5.24,12.24-6.09-11.84-3.04-5.92c-1.01-1.97-2.05-3.92-2.98-6.01C-.07,68.8-.88,59.24.92,50.21c1.76-9.07,6.05-17.59,11.95-24.76,2.98-3.57,6.33-6.86,10.03-9.7,3.68-2.85,7.76-5.34,11.88-7.36C43,4.29,52,1.14,61.61.25c4.8-.42,9.67-.33,14.54.51,4.85.84,9.65,2.35,14.13,4.61,4.46,2.3,8.68,5.24,12.25,8.91l1.33,1.39c.43.47.83.97,1.25,1.46.85.96,1.58,2.03,2.35,3.06.71,1.07,1.43,2.15,2.07,3.27l.94,1.7.42.79.38.74,12.18,23.67-13.57,6.39Z"/>
+        </svg>
+          <span class="logo-text">VARNATIR</span>
+        </a>
+        <p class="footer-tagline">
+          Govern the conversation, not the channel.<br />
+          Enterprise conversational governance for sensitive customer interactions.
+        </p>
+        <div class="partner-meta">
+          <span>Woztell Sanuker · Official Meta Solution Partner</span>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Platform</h5>
+        <a href="solution.html">Flight Control</a>
+        <a href="ia.html">AI &amp; Anonymization</a>
+        <a href="compliance.html">ENS Media Compliance</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Industries</h5>
+        <a href="industries-enterprise.html">Enterprise</a>
+        <a href="industries-govtech.html">Govtech &amp; Public Admin</a>
+        <a href="industries-defensa.html">Defense &amp; Public Safety</a>
+        <a href="pricing.html">Pricing &amp; Access</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Research</h5>
+        <a href="catedra.html">CBC-UV Research Chair</a>
+        <a href="catedra.html">CIBEC 2023 Thesis</a>
+        <a href="https://github.com/ebarcos" target="_blank" rel="noopener">GitHub Perimeter</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-legal">
+        <span>&copy; 2026 VARNATIR · All rights reserved.</span>
+        <span>Legal Notice</span>
+        <span>Privacy &amp; GDPR</span>
+      </div>
+      <div class="footer-governance">
+        <span>Confidential · noindex, nofollow</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="cta-modal" aria-hidden="true">
+    <div class="modal-window">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="badge-kicker text-accent">SCOPED PILOT</span>
+        <h3>Unlock an AI-Driven Workflow</h3>
+        <p>Tell us which customer conversation your DPO or Compliance Committee has blocked. We deploy a governed pilot in 48 hours.</p>
+      </div>
+
+      <form class="modal-form" id="pilot-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="form-name">Full Name</label>
+          <input type="text" id="form-name" required placeholder="e.g. David Vance" />
+        </div>
+
+        <div class="form-group">
+          <label for="form-email">Corporate Email</label>
+          <input type="email" id="form-email" required placeholder="david@enterprise.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="form-sector">Industry Sector</label>
+          <select id="form-sector" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option value="enterprise-banca">Enterprise · Banking &amp; Financial Services</option>
+            <option value="enterprise-seguros">Enterprise · Insurance &amp; Claims</option>
+            <option value="enterprise-salud">Enterprise · Healthcare &amp; Clinics</option>
+            <option value="enterprise-retail">Enterprise · Retail &amp; Commerce</option>
+            <option value="govtech-aapp">Govtech · Public Administration</option>
+            <option value="govtech-local">Govtech · Local Government</option>
+            <option value="defensa-ffcse">Defense &amp; Public Safety</option>
+            <option value="other">Other regulated sector</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="form-case">Which AI use case do you need to unlock?</label>
+          <textarea id="form-case" rows="3" placeholder="e.g. In-flight conversational assistant for citizen claims without exposing tax or medical PII"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-btn">
+          Request AI Pilot
+        </button>
+
+        <div class="form-notice">
+          🔒 Zero app installation required · NDA guaranteed · Full GDPR &amp; ENS compliance.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
