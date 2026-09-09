@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Govtech & Sector Público · VARNATIR</title>
+  <title>GovTech & Administraciones Públicas · VARNATIR</title>
   
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800,900&f[]=jetbrains-mono@400,500&display=swap" rel="stylesheet" />
@@ -21,14 +21,14 @@
   <div class="top-bar">
     <div class="container top-bar-content">
       <span class="pulse-dot"></span>
-      <span class="top-bar-text">Fundamento científico CIBEC 2023: <strong>Gobernar la conversación, no el canal</strong></span>
+      <span class="top-bar-text">Tesis Doctoral CIBEC 2023: <strong>Gobernar la conversación, no el canal</strong></span>
       <a href="catedra.html" class="top-bar-link">Ver investigación &rarr;</a>
     </div>
   </div>
 
   <header class="site-header" id="navbar">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo" id="logo" aria-label="VARNATIR">
+      <a href="../index.html" class="brand-logo" id="logo" aria-label="VARNATIR">
         <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="32" height="28" aria-hidden="true">
           <defs>
             <linearGradient id="v-iso-hdr" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -49,215 +49,386 @@
       </a>
 
       <nav class="main-nav" id="main-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="solution.html" class="nav-link">Solución</a>
-        <a href="ia.html" class="nav-link">IA & Soberanía</a>
-        <a href="industries.html" class="nav-link active" style="color: var(--accent);">Industrias</a>
-        <a href="compliance.html" class="nav-link">Compliance</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../solution.html" class="nav-link">Solución</a>
+        <a href="../ia.html" class="nav-link">IA & Control del Dato</a>
+        <a href="../industries.html" class="nav-link active" style="color: var(--accent);">Industrias</a>
+        <a href="../compliance.html" class="nav-link">Cumplimiento</a>
+        <a href="../pricing.html" class="nav-link">Precios</a>
       </nav>
 
       <div class="header-actions">
-        <!-- Language Switcher -->
-        <div class="lang-switcher" aria-label="Selector de Idioma">
-          <a href="../industries-govtech.html" class="lang-link" data-lang="en">EN</a>
+        <div class="lang-switcher" aria-label="Language Selector">
+          <a href="industries-govtech.html" class="lang-link " data-lang="en">EN</a>
           <a href="industries-govtech.html" class="lang-link active" data-lang="es">ES</a>
         </div>
 
-        <button class="btn btn-primary" onclick="openModal('Govtech Vertical')">Desbloquear un flujo</button>
+        <button class="btn btn-primary" onclick="openModal('GovTech & Administraciones Públicas')">Desbloquear un Flujo</button>
       </div>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <section class="hero-section" style="padding: 70px 0 60px;">
+  <!-- 1. SECTOR HERO -->
+  <section class="hero-section" style="padding: 70px 0 50px;">
     <div class="hero-radial-glow"></div>
     <div class="container hero-container">
       <div class="eyebrow-wrapper">
-        <span class="badge-kicker">ADMINISTRACIÓN PÚBLICA & LOCAL</span>
+        <span class="badge-kicker" style="background: rgba(96,165,250,0.12); color: #60A5FA; border-color: rgba(96,165,250,0.3);">ADMINISTRACIÓN PÚBLICA & AAPP (ENS MEDIA)</span>
       </div>
       <h1 class="hero-title active" style="max-width: 980px;">
-        El ciudadano ya está en WhatsApp.<br />
-        <span class="text-gradient">Ahora su administración también le responde con rigor.</span>
+        Atención, trámites y avisos administrativos en WhatsApp.<br><span class="text-gradient">Sin brecha digital y con plena validez jurídica.</span>
       </h1>
-      <p class="hero-subhead" style="max-width: 780px;">
-        Las sedes electrónicas con certificados complejos excluyen a la mayoría de la población. VARNATIR permite a ministerios, comunidades y ayuntamientos atender, tramitar y notificar en el canal del ciudadano bajo estricta conformidad con el ENS Media.
+      <p class="hero-subhead" style="max-width: 820px; margin-bottom: 28px;">
+        Las sedes electrónicas con certificados complejos excluyen a gran parte de la población. VARNATIR permite a ayuntamientos, diputaciones y organismos públicos desplegar ventanillas únicas con garantías del Esquema Nacional de Seguridad (ENS Media - RD 311/2022) en el canal que el 94% de la ciudadanía ya domina.
       </p>
+
+      <!-- Proof Chips -->
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 32px;">
+        <span class="kinetic-badge" style="font-size: 0.72rem; padding: 6px 14px; border-color: rgba(96,165,250,0.3); color: #60A5FA;">&check; ENS MEDIA (RD 311/2022)</span>
+<span class="kinetic-badge" style="font-size: 0.72rem; padding: 6px 14px; border-color: rgba(96,165,250,0.3); color: #60A5FA;">&check; LEY 39/2015 Y 40/2015</span>
+<span class="kinetic-badge" style="font-size: 0.72rem; padding: 6px 14px; border-color: rgba(96,165,250,0.3); color: #60A5FA;">&check; CERO BRECHA DIGITAL</span>
+<span class="kinetic-badge" style="font-size: 0.72rem; padding: 6px 14px; border-color: rgba(96,165,250,0.3); color: #60A5FA;">&check; REGISTRO ELECTRÓNICO</span>
+<span class="kinetic-badge" style="font-size: 0.72rem; padding: 6px 14px; border-color: rgba(96,165,250,0.3); color: #60A5FA;">&check; NUBE SOBERANA EUROPEA</span>
+      </div>
+
+      <div class="hero-actions" style="justify-content: center;">
+        <button class="btn btn-primary btn-lg" onclick="openModal('GovTech & Administraciones Públicas')">Desbloquear un Flujo</button>
+        <a href="../compliance.html" class="btn btn-ghost btn-lg">Ver Acreditación ENS Media &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <!-- Govtech Grid -->
+  <!-- 2. KEY SELLING POINTS (KSPS) -->
   <section class="section-container bg-surface-alt">
     <div class="container">
       <div class="section-header">
-        <span class="section-kicker text-accent">INCLUSIÓN DIGITAL SIN BARRERAS</span>
-        <h2 class="section-h2">Democratizar los servicios públicos en el bolsillo del vecino</h2>
-        <p class="section-lead">
-          Sin obligar al ciudadano a descargarse apps municipales que nadie utiliza ni a pelearse con navegadores obsoletos.
-        </p>
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-line"></span>
+          <span class="section-eyebrow-text">VENTAJAS ESTRUCTURALES PARA EL SECTOR PÚBLICO</span>
+        </div>
+        <h2 class="section-h2-epic">Transformación Digital Real que Llega a Toda la Población</h2>
+        <p class="section-lead">Cumplimiento normativo estricto sin forzar al ciudadano a instalar apps de terceros ni luchar con certificados caducados.</p>
       </div>
 
-      <div class="model-cards-grid">
-        <div class="model-card">
-          <div class="card-tag">CASO 01 · ADMINISTRACIÓN LOCAL</div>
-          <h3 class="card-title">El Ayuntamiento en WhatsApp</h3>
-          <p class="card-desc">
-            Desde pueblos de 2.000 habitantes hasta grandes capitales: tramitación de volantes de empadronamiento, incidencias de vía pública, calendario tributario y cita previa con funcionarios.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 16px;">
-            ✓ Cero barreras para personas mayores · 94% de satisfacción vecinal.
-          </div>
+      <div class="ksp-grid">
+        
+        <div class="ksp-card">
+          <div class="ksp-icon" style="background: rgba(96,165,250,0.12); color: #60A5FA;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 class="ksp-title">Inclusión Ciudadana sin Brecha Digital</h3>
+          <p class="ksp-desc">Personas mayores, colectivos no digitalizados y ciudadanos habituales realizan trámites mediante lenguaje natural en su WhatsApp, sin necesidad de ordenador ni certificados complejos.</p>
         </div>
 
-        <div class="model-card">
-          <div class="card-tag">CASO 02 · ADMINISTRACIÓN GENERAL</div>
-          <h3 class="card-title">Consultas de Expedientes y Becas</h3>
-          <p class="card-desc">
-            Seguimiento en tiempo real de ayudas, licencias o prestaciones. El ciudadano recibe notificaciones push homologadas y consulta el estado de su trámite mediante una simple conversación.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 16px;">
-            ✓ Reducción del 60% de llamadas al 010 / 012 · Información oficial instantánea.
-          </div>
+        <div class="ksp-card">
+          <div class="ksp-icon" style="background: rgba(96,165,250,0.12); color: #60A5FA;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg></div>
+          <h3 class="ksp-title">Garantías Nativas de ENS Categoría Media</h3>
+          <p class="ksp-desc">Conformidad estricta con el Real Decreto 311/2022. Trazabilidad forense, pistas de auditoría inmutables, segregación de datos y aislamiento estricto de cualquier telemetría externa.</p>
         </div>
 
-        <div class="model-card">
-          <div class="card-tag">CASO 03 · SEGURIDAD PÚBLICA</div>
-          <h3 class="card-title">Canal Homologado ENS Media</h3>
-          <p class="card-desc">
-            Las AAPP no pueden mantener comunicaciones oficiales en herramientas gratuitas sin control de datos. VARNATIR garantiza el cumplimiento del RD 311/2022 y la custodia en servidores europeos soberanos.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); margin-top: 16px;">
-            ✓ Diseñado conforme a ENS Media · Auditoría estricta de accesos.
-          </div>
+        <div class="ksp-card">
+          <div class="ksp-icon" style="background: rgba(96,165,250,0.12); color: #60A5FA;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3 class="ksp-title">Conexión con Registro y Sede Electrónica</h3>
+          <p class="ksp-desc">Integración bidireccional mediante APIs seguras con los gestores de expedientes municipales (Gestiona, Sedipualba, etc.), padrón de habitantes y pasarelas de pago de tributos.</p>
+        </div>
+
+        <div class="ksp-card">
+          <div class="ksp-icon" style="background: rgba(96,165,250,0.12); color: #60A5FA;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
+          <h3 class="ksp-title">Despliegue en Infraestructura Soberana</h3>
+          <p class="ksp-desc">Opción de despliegue en centros de datos soberanos europeos o en servidores on-premise de la administración, con modelos de IA abiertos y sin dependencia de nubes extranjeras.</p>
+        </div>
+      </div>
+
+      <!-- 3. BUSINESS IMPACT & HARD ROI -->
+      <div class="section-header" style="margin-top: 40px;">
+        <h2 class="section-h2" style="text-align: center;">Impacto Cuantificado en la Gestión Municipal y Autonómica</h2>
+      </div>
+
+      <div class="roi-grid">
+        
+        <div class="roi-card">
+          <div class="roi-num" style="color: #60A5FA;">60%</div>
+          <div class="roi-label">Menos Llamadas</div>
+          <div class="roi-desc">Disminución de colas telefónicas en centralitas y ventanillas físicas</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-num" style="color: #60A5FA;">94%</div>
+          <div class="roi-label">Satisfacción Ciudadana</div>
+          <div class="roi-desc">Frente a menos del 10% en portales de sede electrónica con certificado</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-num" style="color: #60A5FA;">+100K</div>
+          <div class="roi-label">Trámites Resueltos</div>
+          <div class="roi-desc">Consultas de padrón, tributos locales y citas previas automatizadas</div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-num" style="color: #60A5FA;"><48h</div>
+          <div class="roi-label">Despliegue Piloto</div>
+          <div class="roi-desc">Primer canal operativo en marcha para evaluación del equipo técnico</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 4. CANONICAL DEEP-DIVE USE CASES -->
+  <section class="section-container">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-line"></span>
+          <span class="section-eyebrow-text">CASOS DE ÉXITO EN EL SECTOR PÚBLICO</span>
+        </div>
+        <h2 class="section-h2-epic">Ventanillas Únicas y Servicios al Ciudadano Reales</h2>
+      </div>
+
+      <div class="deep-cases-list">
+        
+        <div class="deep-case-box">
+          <div>
+            <span class="deep-case-tag" style="color: #60A5FA;">ADMINISTRACIÓN LOCAL & AYUNTAMIENTOS</span>
+            <h3 class="deep-case-title">Ventanilla Única 24/7 en WhatsApp (Elche, Castelló, Torre Pacheco)</h3>
+            <p class="deep-case-text">El vecino consulta trámites de empadronamiento, solicita cita previa, abona recibos municipales o notifica incidencias urbanas enviando una foto y su ubicación por chat. Toda interacción queda registrada con trazabilidad de expediente administrativo.</p>
+          </div>
+          <div>
+            <div class="deep-case-meta" style="color: #60A5FA;">Resultado: 60% de reducción en colas de atención presencial · Adopción inmediata sin curvas de aprendizaje.</div>
+          </div>
+        </div>
+
+        <div class="deep-case-box">
+          <div>
+            <span class="deep-case-tag" style="color: #60A5FA;">DIPUTACIONES & MANCOMUNIDADES</span>
+            <h3 class="deep-case-title">Conectividad ciudadana y lucha contra la despoblación (Tierras Altas & Guadalajara)</h3>
+            <p class="deep-case-text">Municipios rurales dispersos conectan a su población mediante un canal centralizado de avisos agrícolas, plazos de subvenciones, agua y transporte comarcal. Adjudicación formal en concurso público por 131.600 € para la Mancomunidad de Tierras Altas.</p>
+          </div>
+          <div>
+            <div class="deep-case-meta" style="color: #60A5FA;">Resultado: Cobertura del 100% en zonas con envejecimiento demográfico y sin soporte técnico presencial.</div>
+          </div>
+        </div>
+
+        <div class="deep-case-box">
+          <div>
+            <span class="deep-case-tag" style="color: #60A5FA;">CIBERSEGURIDAD & SERVICIOS TURÍSTICOS</span>
+            <h3 class="deep-case-title">Avisos de seguridad e información ciudadana masiva (INCIBE & FallasBot)</h3>
+            <p class="deep-case-text">Difusión de alertas de ciberseguridad para pymes y ciudadanía (INCIBE), y atención simultánea a más de 50.000 turistas y vecinos durante fiestas populares (FallasBot - Visit València) en más de 12 idiomas en tiempo real.</p>
+          </div>
+          <div>
+            <div class="deep-case-meta" style="color: #60A5FA;">Resultado: 0 caídas de servicio ante picos de demanda masiva · 100% conformidad ENS.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="canonical-footnote" style="text-align: center; margin-top: 24px;">
+        * <strong>Garantía Sector Público:</strong> Datos alojados exclusivamente en la Unión Europea. Cero transferencia internacional de datos. Cumplimiento íntegro de la Ley 39/2015 y el Esquema Nacional de Seguridad (ENS Media).
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VERIFIED CLIENT CREDENTIALS -->
+  <section class="clients-section" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="clients-kicker">ADMINISTRACIONES Y ENTIDADES PÚBLICAS</div>
+      <h2 class="clients-title">Organismos que ya Prestan Servicios con la Plataforma</h2>
+      <div class="clients-grid">
+        
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">INCIBE</div>
+          <div class="client-sub">Inst. Nacional de Ciberseguridad</div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M12 2l3 6h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">Dip. de Guadalajara</div>
+          <div class="client-sub">Administración Provincial</div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">Ajuntament d'Elx</div>
+          <div class="client-sub">Atención Ciudadana 24/7</div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">Ajuntament de Castelló</div>
+          <div class="client-sub">Servicios Municipales</div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">Ayto. Torre Pacheco</div>
+          <div class="client-sub">Ventanilla Única WhatsApp</div>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card-top">
+            <div class="client-emblem"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+            <span class="client-badge-tag govtech">GOVTECH</span>
+          </div>
+          <div class="client-name">Tierras Altas</div>
+          <div class="client-sub">Adjudicación Formal 131.600 €</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. COMPLIANCE MATRIX -->
+  <section class="section-container bg-surface-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-h2" style="text-align: center;">Matriz de Conformidad Técnica para el Sector Público</h2>
+      </div>
+
+      <div class="matrix-table-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Marco Normativo</th><th>Exigencia para la Administración</th><th>Solución Arquitectónica VARNATIR</th><th>Garantía de Auditoría</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>ENS Categoría Media (RD 311/2022)</strong></td><td>Protección de datos de servicios públicos esenciales y trazabilidad</td><td>Aislamiento criptográfico, cifrado en reposo y tránsito, control de accesos RBAC</td><td>Certificación formal y auditorías periódicas de cumplimiento ENS</td></tr>
+<tr><td><strong>Ley 39/2015 del Procedimiento Administrativo</strong></td><td>Validez jurídica en comunicaciones y constancia fehaciente de entrada</td><td>Sellado de tiempo RFC 3161 y hash no repudiable exportable al registro oficial</td><td>Pistas de auditoría descargables con firma electrónica admitida en sede</td></tr>
+<tr><td><strong>Ley 40/2015 de Régimen Jurídico</strong></td><td>Interoperabilidad y reutilización de sistemas entre administraciones públicas</td><td>APIs abiertas REST bajo protocolo Esquema Nacional de Interoperabilidad (ENI)</td><td>Documentación técnica OpenAPI y contratos de servicio conformes con la ley</td></tr>
+<tr><td><strong>Directiva Europea de Accesibilidad (UE 2016/2102)</strong></td><td>Acceso universal a servicios públicos sin barreras tecnológicas</td><td>Interfaz conversacional en lenguaje natural nativo y lectura por voz integrada</td><td>Conformidad WCAG y eliminación de interfaces complejas para la ciudadanía</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. COMMERCIAL ACTION CTA -->
   <section class="cta-banner-section">
     <div class="container">
-      <div class="cta-banner-inner">
-        <span class="cta-badge">SECTOR PÚBLICO</span>
-        <h2 class="cta-h2">Acerca la administración al ciudadano real</h2>
-        <p class="cta-subhead">Diseñamos un piloto para tu ayuntamiento o entidad pública sin compromiso presupuestario inicial.</p>
-        <div class="cta-buttons">
-          <button class="btn btn-primary btn-lg" onclick="openModal('Govtech Piloto')">Solicitar demostración para AAPP</button>
-          <a href="industries-defensa.html" class="btn btn-ghost btn-lg">Ver Defensa & FFCSE &rarr;</a>
+      <div class="cta-inner">
+        <span class="cta-tag" style="background: rgba(96,165,250,0.15); color: #60A5FA; border-color: rgba(96,165,250,0.3);">PROGRAMA PILOTO MUNICIPAL & AAPP</span>
+        <h2 class="cta-h2">Despliega una Ventanilla Única en WhatsApp en 48 Horas</h2>
+        <p class="cta-sub">Sin compromisos iniciales ni licitaciones previas: habilitamos un entorno de pruebas con tus trámites municipales reales para validación de tus servicios jurídicos y técnicos.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="openModal('GovTech & Administraciones Públicas')">Solicitar Piloto GovTech (48h)</button>
+          <a href="../compliance.html" class="btn btn-ghost btn-lg">Ver Informe ENS Categoría Media &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand-logo">
-                  <svg class="brand-isotipo" viewBox="0 0 145.17 123.8" width="32" height="28" aria-hidden="true">
-          <defs>
-            <linearGradient id="v-iso-hdr" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#185359"/>
-              <stop offset="50%" stop-color="#2B7E6E"/>
-              <stop offset="100%" stop-color="#4B145F"/>
-            </linearGradient>
-            <linearGradient id="v-iso-hdr-rev" x1="100%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stop-color="#4B145F"/>
-              <stop offset="50%" stop-color="#742296"/>
-              <stop offset="100%" stop-color="#185359"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#v-iso-hdr)" d="m35.3,67.03l10.48,24.47.33.76c.11.26.22.51.31.7l.58,1.26c.39.84.86,1.64,1.31,2.45.51.78.96,1.59,1.54,2.33.28.37.54.76.83,1.13l.9,1.08c2.41,2.89,5.41,5.31,8.69,7.32,3.31,1.98,6.97,3.43,10.8,4.39,3.83.96,7.88,1.33,11.93,1.26,8.14-.17,16.39-2.34,24.26-5.61,3.97-1.62,7.64-3.52,11.16-5.86,3.51-2.32,6.73-5.07,9.66-8.11,5.8-6.12,10.3-13.63,12.51-21.88,2.24-8.22,2.17-17.18-.76-25.37-.73-2.02-1.64-4.06-2.51-6.1l-2.62-6.12-5.24-12.24,6.09,11.84,3.04,5.92c1.01,1.97,2.05,3.92,2.98,6.01,3.67,8.33,4.47,17.88,2.67,26.91-1.76,9.07-6.05,17.59-11.95,24.76-2.98,3.57-6.33,6.86-10.03,9.7-3.68,2.85-7.76,5.34-11.88,7.36-8.22,4.1-17.22,7.25-26.83,8.14-4.8.42-9.67.33-14.54-.51-4.85-.84-9.65-2.35-14.13-4.61-4.46-2.3-8.68-5.24-12.25-8.91l-1.33-1.39c-.43-.47-.83-.97-1.25-1.46-.85-.96-1.58-2.03-2.35-3.06-.71-1.07-1.43-2.15-2.07-3.27l-.94-1.7-.42-.79-.38-.74-12.18-23.67,13.57-6.39Z"/>
-          <path fill="url(#v-iso-hdr-rev)" d="m109.87,56.77l-10.48-24.47-.33-.76c-.11-.26-.22-.51-.31-.7l-.58-1.26c-.39-.84-.86-1.64-1.31-2.45-.51-.78-.96-1.59-1.54-2.33-.28-.37-.54-.76-.83-1.13l-.9-1.08c-2.41-2.89-5.41-5.31-8.69-7.32-3.31-1.98-6.97-3.43-10.8-4.39-3.83-.96-7.88-1.33-11.93-1.26-8.14.17-16.39,2.34-24.26,5.61-3.97,1.62-7.64,3.52-11.16,5.86-3.51,2.32-6.73,5.07-9.66,8.11-5.8,6.12-10.3,13.63-12.52,21.88-2.24,8.22-2.17,17.18.76,25.37.73,2.02,1.64,4.06,2.51,6.1l2.62,6.12,5.24,12.24-6.09-11.84-3.04-5.92c-1.01-1.97-2.05-3.92-2.98-6.01C-.07,68.8-.88,59.24.92,50.21c1.76-9.07,6.05-17.59,11.95-24.76,2.98-3.57,6.33-6.86,10.03-9.7,3.68-2.85,7.76-5.34,11.88-7.36C43,4.29,52,1.14,61.61.25c4.8-.42,9.67-.33,14.54.51,4.85.84,9.65,2.35,14.13,4.61,4.46,2.3,8.68,5.24,12.25,8.91l1.33,1.39c.43.47.83.97,1.25,1.46.85.96,1.58,2.03,2.35,3.06.71,1.07,1.43,2.15,2.07,3.27l.94,1.7.42.79.38.74,12.18,23.67-13.57,6.39Z"/>
-        </svg>
-          <span class="logo-text">VARNATIR</span>
-        </a>
-        <p class="footer-tagline">
-          Gobernar la conversación, no el canal.<br />
-          Plataforma conversacional gestionada para conversaciones sensibles.
-        </p>
-        <div class="partner-meta">
-          <span>Partner Oficial de Meta</span>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <span class="logo-text">VARNATIR</span>
+          </div>
+          <p class="footer-tagline">
+            Plataforma de Gobierno de Conversaciones de Misión Crítica. Sin ceder el control del dato.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); margin-top: 12px;">
+            Solution Partner de Meta · Cátedra CBC-UV
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Verticales</span>
+          <ul class="footer-links">
+            <li><a href="../industries-enterprise.html">Gran Cuenta & Banca</a></li>
+            <li><a href="../industries-govtech.html">GovTech & AAPP</a></li>
+            <li><a href="../industries-defensa.html">Defensa & Seguridad</a></li>
+            <li><a href="../industries.html">Hub de Industrias</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Plataforma</span>
+          <ul class="footer-links">
+            <li><a href="../solution.html">Arquitectura</a></li>
+            <li><a href="../ia.html">IA & Blind Retriever</a></li>
+            <li><a href="../compliance.html">Cumplimiento & DORA</a></li>
+            <li><a href="../canales.html">Canales & WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-title">Institucional</span>
+          <ul class="footer-links">
+            <li><a href="catedra.html">Cátedra CBC-UV</a></li>
+            <li><a href="../about.html">Sobre Nosotros</a></li>
+            <li><a href="../pricing.html">Precios & Despliegue</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-nav-col">
-        <h5>Plataforma</h5>
-        <a href="solution.html">Control de Vuelo</a>
-        <a href="ia.html">IA & Anonimización</a>
-        <a href="compliance.html">Esquema ENS Media</a>
-      </div>
-
-      <div class="footer-nav-col">
-        <h5>Industrias</h5>
-        <a href="industries-enterprise.html">Enterprise</a>
-        <a href="industries-govtech.html">Govtech & Local</a>
-        <a href="industries-defensa.html">Defensa & FFCSE</a>
-        <a href="pricing.html">Pricing & Democratización</a>
-      </div>
-
-      <div class="footer-nav-col">
-        <h5>Investigación</h5>
-        <a href="catedra.html">Cátedra CBC-UV</a>
-        <a href="catedra.html">Tesis CIBEC 2023</a>
-        <a href="https://github.com/ebarcos" target="_blank" rel="noopener">Perímetro GitHub</a>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <div class="footer-legal">
-        <span>&copy; 2026 VARNATIR · Todos los derechos reservados.</span>
-        <span>Aviso Legal</span>
-        <span>Privacidad & RGPD</span>
-      </div>
-      <div class="footer-governance">
-        <span>Confidencial · noindex, nofollow</span>
+      <div class="footer-bottom">
+        <span>&copy; 2026 VARNATIR · Woztell Sanuker Group. Todos los derechos reservados.</span>
+        <div class="footer-bottom-links">
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint);">ENS Media (RD 311/2022)</span>
+        </div>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="cta-modal" aria-hidden="true">
-    <div class="modal-window">
-      <button class="modal-close" id="modal-close" aria-label="Cerrar modal">&times;</button>
-      <div class="modal-header">
-        <span class="badge-kicker text-accent">ENTIDAD PÚBLICA</span>
-        <h3>Demostración para Administración</h3>
-        <p>Indica tu organismo o ayuntamiento y prepararemos una maqueta con trámites típicos.</p>
-      </div>
+  <!-- MODAL: UNIFIED HOOKED WITH app.js -->
+  <div class="modal-overlay" id="cta-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <span class="modal-kicker">PILOTO CONTROLADO · 48 HORAS</span>
+      <h3>Desbloquear un Flujo Crítico</h3>
+      <p>Cuéntanos qué transacción o servicio tiene paralizado tu DPO o Comité de Riesgo. Desplegamos un sandbox de validación en 48 horas.</p>
 
-      <form class="modal-form" id="pilot-form" onsubmit="handleFormSubmit(event)">
+      <form id="pilot-form" onsubmit="handleFormSubmit(event)">
         <div class="form-group">
-          <label for="form-name">Nombre y Cargo</label>
-          <input type="text" id="form-name" required placeholder="Ej. Responsable Modernización / Alcaldía" />
+          <label for="form-name">NOMBRE Y APELLIDOS</label>
+          <input type="text" id="form-name" required placeholder="Elena Vance" />
         </div>
-
         <div class="form-group">
-          <label for="form-email">Correo Institucional (.es / .gob / ayuntamiento)</label>
-          <input type="email" id="form-email" required placeholder="tu-cargo@ayto.es" />
+          <label for="form-email">EMAIL CORPORATIVO / OFICIAL</label>
+          <input type="email" id="form-email" required placeholder="elena@organization.com" />
         </div>
-
         <div class="form-group">
-          <label for="form-sector">Tipo de Entidad</label>
-          <select id="form-sector" required>
-            <option value="govtech-local" selected>Ayuntamiento / Diputación Local</option>
-            <option value="govtech-aapp">Comunidad Autónoma / Ministerio</option>
-            <option value="otro">Empresa Pública / Agencia</option>
+          <label for="form-company">ORGANIZACIÓN / ENTIDAD</label>
+          <input type="text" id="form-company" required placeholder="Organization / Entity" />
+        </div>
+        <div class="form-group">
+          <label for="form-sector">SECTOR</label>
+          <select id="form-sector">
+            <option value="banca">Banking &amp; Financial Services</option>
+            <option value="seguros">Insurance &amp; Claims Adjusting</option>
+            <option value="salud">Healthcare &amp; Clinical Networks</option>
+            <option value="govtech">Public Administration / GovTech</option>
+            <option value="defensa">Defense &amp; Public Safety</option>
+            <option value="retail">Transactional High-Ticket Retail</option>
+            <option value="otro">Other Regulated Sector</option>
           </select>
         </div>
-
         <div class="form-group">
-          <label for="form-case">¿Qué trámites vecinales necesitas canalizar?</label>
-          <textarea id="form-case" rows="3" placeholder="Ej. Padrón, cita previa, avisos de protección civil en WhatsApp"></textarea>
+          <label for="form-case">FLUJO O CANAL A DESBLOQUEAR</label>
+          <input type="text" id="form-case" placeholder="Describe la interacción o servicio regulado..." />
         </div>
-
-        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-btn">
-          Solicitar demo institucional
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-btn" style="margin-top: 18px;">
+          Solicitar Sandbox de Validación (48h)
         </button>
-
-        <div class="form-notice">
-          🔒 Diseñado conforme a ENS Media. Datos en territorio europeo.
+        <div class="form-note">
+          &check; Sin instalación de apps &middot; Protegido por NDA mutuo &middot; SLA de 48 horas
         </div>
       </form>
     </div>
