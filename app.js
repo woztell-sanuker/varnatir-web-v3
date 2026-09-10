@@ -803,10 +803,10 @@ function initReviewMode() {
 
   
   // Sincronización con Google Sheets (VARNATIR Web Review)
-  const DEFAULT_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwYOUR_DEPLOYMENT_ID/exec';
+  const DEFAULT_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwM0tLiFtuWYaE84ZNZEI3qZXJ3vwUGoB1xY9MASd2zagPfao5xrkYzBWkjvh0rlLFQMw/exec';
 
   function getSheetsWebhookUrl() {
-    return localStorage.getItem('varnatir_sheets_webhook') || '';
+    return localStorage.getItem('varnatir_sheets_webhook') || DEFAULT_SHEETS_WEBHOOK;
   }
 
   function setSheetsWebhookUrl(url) {
