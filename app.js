@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFrameworkTabs();
   initDropdowns();
+  initReviewMode();
 });
 
 /* --------------------------------------------------------------------------
@@ -742,3 +743,496 @@ function initDropdowns() {
   });
 }
 
+
+
+/* ==========================================================================
+   13. Modo Review y Generador de Patchnotes (Client-Side, Non-Destructive)
+   ========================================================================== */
+function initReviewMode() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const hash = window.location.hash || '';
+  const isReviewUrl = (urlParams.has('mode') && urlParams.get('mode') === 'review') ||
+                      urlParams.has('review') ||
+                      urlParams.has('feedback') ||
+                      hash.includes('review');
+
+  let isStoredActive = false;
+  try {
+    isStoredActive = localStorage.getItem('varnatir_review_active') === 'true';
+  } catch(e) {}
+
+  // Atajo de teclado global Ctrl+Shift+R / Cmd+Shift+R para activar/desactivar
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'r') {
+      toggleReview(!isStoredActive);
+    }
+  });
+
+  if (!isReviewUrl && !isStoredActive) {
+    return; // Modo inactivo para visitantes normales
+  }
+
+  // Activar y persistir para navegación entre páginas
+  try {
+    localStorage.setItem('varnatir_review_active', 'true');
+  } catch(e) {}
+
+  injectReviewStyles();
+  createReviewDock();
+  setupInspector();
+
+  function toggleReview(activate) {
+    try {
+      if (activate) {
+        localStorage.setItem('varnatir_review_active', 'true');
+        const url = new URL(window.location.href);
+        url.searchParams.set('mode', 'review');
+        window.location.href = url.href;
+      } else {
+        localStorage.removeItem('varnatir_review_active');
+        const url = new URL(window.location.href);
+        url.searchParams.delete('mode');
+        url.searchParams.delete('review');
+        url.searchParams.delete('feedback');
+        window.location.href = url.href;
+      }
+    } catch(e) {
+      window.location.reload();
+    }
+  }
+
+  function getNotes() {
+    try {
+      return JSON.parse(localStorage.getItem('varnatir_patchnotes') || '[]');
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveNotes(notes) {
+    try {
+      localStorage.setItem('varnatir_patchnotes', JSON.stringify(notes));
+    } catch(e) {}
+    updateBadge();
+  }
+
+  function injectReviewStyles() {
+    if (document.getElementById('varnatir-review-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'varnatir-review-styles';
+    style.textContent = `
+      .varnatir-review-hover {
+        outline: 2px dashed #5FD3B8 !important;
+        outline-offset: 3px !important;
+        cursor: crosshair !important;
+        background-color: rgba(95, 211, 184, 0.10) !important;
+        transition: outline 0.15s ease, background-color 0.15s ease;
+      }
+      .varnatir-has-note {
+        border-bottom: 2px solid #5FD3B8 !important;
+        background-color: rgba(95, 211, 184, 0.05) !important;
+      }
+      #varnatir-dock {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(14, 18, 26, 0.96);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(95, 211, 184, 0.45);
+        border-radius: 40px;
+        padding: 9px 18px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #F3F5F7;
+        font-size: 13px;
+        animation: v-dock-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes v-dock-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .v-dock-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .v-status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #5FD3B8;
+        box-shadow: 0 0 10px #5FD3B8;
+        animation: v-pulse 2s infinite;
+      }
+      @keyframes v-pulse {
+        0% { transform: scale(0.95); opacity: 0.8; }
+        50% { transform: scale(1.15); opacity: 1; }
+        100% { transform: scale(0.95); opacity: 0.8; }
+      }
+      #varnatir-dock-badge {
+        background: rgba(95, 211, 184, 0.15);
+        color: #5FD3B8;
+        font-weight: 700;
+        font-size: 11px;
+        padding: 3px 9px;
+        border-radius: 20px;
+        border: 1px solid rgba(95, 211, 184, 0.3);
+      }
+      .v-dock-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: #F3F5F7;
+        padding: 6px 13px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .v-dock-btn:hover {
+        background: #5FD3B8;
+        color: #0E121A;
+        border-color: #5FD3B8;
+      }
+      .v-dock-exit {
+        background: transparent;
+        border: none;
+        color: #8C96A5;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 4px 6px;
+        transition: color 0.15s;
+      }
+      .v-dock-exit:hover {
+        color: #F87171;
+      }
+      /* Modal de Feedback */
+      #varnatir-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 8, 14, 0.80);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      #varnatir-modal {
+        background: #111620;
+        border: 1px solid rgba(95, 211, 184, 0.4);
+        border-radius: 18px;
+        width: 100%;
+        max-width: 580px;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+        color: #F3F5F7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        padding: 26px;
+        box-sizing: border-box;
+        animation: v-slide-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes v-slide-up {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      #varnatir-modal h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        color: #5FD3B8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .v-meta-tag {
+        font-size: 11px;
+        font-family: monospace;
+        color: #8C96A5;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-weight: 500;
+      }
+      .v-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #8C96A5;
+        margin: 14px 0 6px;
+      }
+      .v-original-text {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-size: 13px;
+        color: #CBD5E1;
+        line-height: 1.45;
+        max-height: 90px;
+        overflow-y: auto;
+      }
+      .v-input, .v-select {
+        width: 100%;
+        box-sizing: border-box;
+        background: #171E2B;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        color: #F3F5F7;
+        font-size: 13px;
+        padding: 10px 12px;
+        font-family: inherit;
+      }
+      .v-input:focus, .v-select:focus {
+        outline: none;
+        border-color: #5FD3B8;
+        box-shadow: 0 0 0 2px rgba(95, 211, 184, 0.2);
+      }
+      .v-btn-row {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .v-btn {
+        padding: 9px 18px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.18s;
+      }
+      .v-btn-primary {
+        background: #5FD3B8;
+        color: #0E121A;
+      }
+      .v-btn-primary:hover {
+        background: #4ec2a7;
+      }
+      .v-btn-secondary {
+        background: transparent;
+        color: #8C96A5;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .v-btn-secondary:hover {
+        color: #F3F5F7;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function createReviewDock() {
+    if (document.getElementById('varnatir-dock')) return;
+
+    const dock = document.createElement('div');
+    dock.id = 'varnatir-dock';
+    dock.innerHTML = `
+      <div class="v-dock-status">
+        <span class="v-status-dot"></span>
+        <span>Modo Review</span>
+      </div>
+      <span id="varnatir-dock-badge">0 notas</span>
+      <button class="v-dock-btn" id="v-btn-export">Descargar JSON</button>
+      <button class="v-dock-btn" id="v-btn-copy">Copiar Markdown</button>
+      <button class="v-dock-exit" id="v-btn-exit" title="Salir de Modo Review">✕</button>
+    `;
+    document.body.appendChild(dock);
+
+    updateBadge();
+
+    document.getElementById('v-btn-export').addEventListener('click', exportJSON);
+    document.getElementById('v-btn-copy').addEventListener('click', copyMarkdown);
+    document.getElementById('v-btn-exit').addEventListener('click', () => toggleReview(false));
+  }
+
+  function updateBadge() {
+    const notes = getNotes();
+    const badge = document.getElementById('varnatir-dock-badge');
+    if (badge) {
+      badge.textContent = `${notes.length} nota${notes.length === 1 ? '' : 's'}`;
+    }
+  }
+
+  let currentHovered = null;
+
+  function setupInspector() {
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest('#varnatir-dock') || e.target.closest('#varnatir-modal-backdrop')) return;
+
+      const target = getInspectableElement(e.target);
+      if (target) {
+        if (currentHovered && currentHovered !== target) {
+          currentHovered.classList.remove('varnatir-review-hover');
+        }
+        currentHovered = target;
+        currentHovered.classList.add('varnatir-review-hover');
+      }
+    }, true);
+
+    document.addEventListener('mouseout', (e) => {
+      if (currentHovered && !currentHovered.contains(e.relatedTarget)) {
+        currentHovered.classList.remove('varnatir-review-hover');
+        currentHovered = null;
+      }
+    }, true);
+
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#varnatir-dock') || e.target.closest('#varnatir-modal-backdrop')) return;
+
+      const target = getInspectableElement(e.target);
+      if (target) {
+        e.preventDefault();
+        e.stopPropagation();
+        openModal(target);
+      }
+    }, true);
+  }
+
+  function getInspectableElement(el) {
+    if (!el || el === document.body || el === document.documentElement) return null;
+    const inspectableTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P', 'SPAN', 'A', 'LI', 'STRONG', 'EM', 'BUTTON', 'TH', 'TD'];
+    if (inspectableTags.includes(el.tagName)) {
+      const text = el.innerText ? el.innerText.trim() : '';
+      if (text.length > 1 && text.length < 1500) return el;
+    }
+    return el.parentElement ? getInspectableElement(el.parentElement) : null;
+  }
+
+  function openModal(el) {
+    const existing = document.getElementById('varnatir-modal-backdrop');
+    if (existing) existing.remove();
+
+    const textOriginal = (el.innerText || '').trim();
+    const tagName = el.tagName.toLowerCase();
+    const pathParts = window.location.pathname.split('/');
+    const pageName = pathParts[pathParts.length - 1] || 'index.html';
+    const parentContext = el.closest('[data-dropdown]') ? `Dropdown: ${el.closest('[data-dropdown]').getAttribute('data-dropdown')}` : (el.closest('header') ? 'Header' : 'Contenido');
+
+    const backdrop = document.createElement('div');
+    backdrop.id = 'varnatir-modal-backdrop';
+    backdrop.innerHTML = `
+      <div id="varnatir-modal">
+        <h3>
+          <span>📝 Sugerir Cambio / Nota de Feedback</span>
+          <span class="v-meta-tag">${pageName} · &lt;${tagName}&gt;</span>
+        </h3>
+        
+        <span class="v-label">Texto Actual en la Web</span>
+        <div class="v-original-text">${escapeHtml(textOriginal)}</div>
+
+        <span class="v-label">Tu Propuesta de Texto (Opcional)</span>
+        <textarea class="v-input" id="v-input-prop" rows="3" placeholder="Si tienes una redacción alternativa, escríbela aquí...">${escapeHtml(textOriginal)}</textarea>
+
+        <span class="v-label">Categoría del Feedback</span>
+        <select class="v-select" id="v-input-cat">
+          <option value="Tono Editorial / Copywriting">Tono Editorial / Copywriting</option>
+          <option value="Compliance / Legal">Compliance / Legal / Precisión Normativa</option>
+          <option value="Claridad Comercial / C-Level">Claridad Comercial / C-Level</option>
+          <option value="Diseño / UI / Layout">Diseño / UI / Layout</option>
+          <option value="Otro">Otro / Sugerencia General</option>
+        </select>
+
+        <span class="v-label">Comentario o Justificación</span>
+        <textarea class="v-input" id="v-input-comm" rows="2" placeholder="Explica brevemente por qué sugieres este cambio..."></textarea>
+
+        <div class="v-btn-row">
+          <button class="v-btn v-btn-secondary" id="v-cancel-modal">Cancelar</button>
+          <button class="v-btn v-btn-primary" id="v-save-modal">Guardar Nota</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(backdrop);
+
+    document.getElementById('v-cancel-modal').addEventListener('click', () => backdrop.remove());
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) backdrop.remove();
+    });
+
+    document.getElementById('v-save-modal').addEventListener('click', () => {
+      const propText = document.getElementById('v-input-prop').value.trim();
+      const cat = document.getElementById('v-input-cat').value;
+      const comm = document.getElementById('v-input-comm').value.trim();
+
+      const newNote = {
+        id: 'NOTE_' + Date.now(),
+        fecha: new Date().toISOString(),
+        pagina: pageName,
+        contexto: parentContext,
+        tag: tagName,
+        texto_original: textOriginal,
+        texto_propuesto: propText !== textOriginal ? propText : '',
+        categoria: cat,
+        comentario: comm || 'Sin comentario adicional'
+      };
+
+      const notes = getNotes();
+      notes.push(newNote);
+      saveNotes(notes);
+
+      el.classList.add('varnatir-has-note');
+      backdrop.remove();
+
+      alert(`✅ Nota guardada con éxito (${notes.length} acumuladas).`);
+    });
+  }
+
+  function exportJSON() {
+    const notes = getNotes();
+    if (notes.length === 0) {
+      alert('Aún no has registrado ninguna nota. Haz clic sobre cualquier texto para sugerir cambios.');
+      return;
+    }
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
+      proyecto: "VARNATIR / MCCP Web - Patchnotes",
+      version_base: "v3",
+      fecha_exportacion: new Date().toISOString(),
+      total_notas: notes.length,
+      notas: notes
+    }, null, 2));
+
+    const a = document.createElement('a');
+    a.href = dataStr;
+    a.download = `varnatir_patchnotes_${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  function copyMarkdown() {
+    const notes = getNotes();
+    if (notes.length === 0) {
+      alert('Aún no has registrado ninguna nota.');
+      return;
+    }
+    let md = `# Patchnotes y Feedback Editorial · VARNATIR\n\n`;
+    md += `* **Fecha**: ${new Date().toLocaleString()}\n`;
+    md += `* **Total Notas**: ${notes.length}\n\n`;
+    md += `| Nº | Página | Contexto | Categoría | Texto Original | Propuesta / Comentario |\n`;
+    md += `|:---|:---|:---|:---|:---|:---|\n`;
+    notes.forEach((n, idx) => {
+      const prop = n.texto_propuesto ? `**Propuesta:** "${n.texto_propuesto}"<br>` : '';
+      const comm = `*Nota:* ${n.comentario}`;
+      md += `| ${idx+1} | \`${n.pagina}\` | ${n.contexto} | ${n.categoria} | "${n.texto_original.replace(/\|/g, '\\|')}" | ${(prop + comm).replace(/\|/g, '\\|')} |\n`;
+    });
+
+    navigator.clipboard.writeText(md).then(() => {
+      alert('📋 ¡Resumen en Markdown copiado al portapapeles!');
+    }).catch(() => {
+      prompt('Copia el resumen manualmente:', md);
+    });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+}
