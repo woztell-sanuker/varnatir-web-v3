@@ -801,6 +801,42 @@ function initReviewMode() {
     }
   }
 
+  
+  // Sincronización con Google Sheets (VARNATIR Web Review)
+  const DEFAULT_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwYOUR_DEPLOYMENT_ID/exec';
+
+  function getSheetsWebhookUrl() {
+    return localStorage.getItem('varnatir_sheets_webhook') || '';
+  }
+
+  function setSheetsWebhookUrl(url) {
+    if (url) {
+      localStorage.setItem('varnatir_sheets_webhook', url.trim());
+    } else {
+      localStorage.removeItem('varnatir_sheets_webhook');
+    }
+  }
+
+  function sendToGoogleSheets(note) {
+    const webhookUrl = getSheetsWebhookUrl();
+    if (!webhookUrl) return;
+
+    try {
+      fetch(webhookUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(note)
+      }).then(() => {
+        console.log('✅ Nota enviada a Google Sheets');
+      }).catch(err => {
+        console.warn('Error al enviar a Google Sheets:', err);
+      });
+    } catch(e) {
+      console.warn('Excepción al conectar con Google Sheets:', e);
+    }
+  }
+
   function getNotes() {
     try {
       return JSON.parse(localStorage.getItem('varnatir_patchnotes') || '[]');
@@ -1042,6 +1078,7 @@ function initReviewMode() {
         <span>Modo Review</span>
       </div>
       <span id="varnatir-dock-badge">0 notas</span>
+      <button class="v-dock-btn" id="v-btn-sheets" title="Vincular con Google Sheets">📊 Sheets</button>
       <button class="v-dock-btn" id="v-btn-export">Descargar JSON</button>
       <button class="v-dock-btn" id="v-btn-copy">Copiar Markdown</button>
       <button class="v-dock-exit" id="v-btn-exit" title="Salir de Modo Review">✕</button>
@@ -1050,6 +1087,14 @@ function initReviewMode() {
 
     updateBadge();
 
+    document.getElementById('v-btn-sheets').addEventListener('click', () => {
+      const current = getSheetsWebhookUrl();
+      const entered = prompt('Introduce la URL del Webhook de Google Apps Script para sincronizar con Google Sheets:\n(Ejemplo: https://script.google.com/macros/s/.../exec)', current);
+      if (entered !== null) {
+        setSheetsWebhookUrl(entered);
+        alert(entered ? '✅ Webhook de Google Sheets configurado. Las nuevas notas se enviarán automáticamente a la hoja.' : 'ℹ️ Sincronización con Google Sheets desactivada.');
+      }
+    });
     document.getElementById('v-btn-export').addEventListener('click', exportJSON);
     document.getElementById('v-btn-copy').addEventListener('click', copyMarkdown);
     document.getElementById('v-btn-exit').addEventListener('click', () => toggleReview(false));
@@ -1181,6 +1226,9 @@ function initReviewMode() {
 
       el.classList.add('varnatir-has-note');
       backdrop.remove();
+
+      // Enviar a Google Sheets si hay webhook configurado
+      sendToGoogleSheets(newNote);
 
       alert(`✅ Nota guardada con éxito (${notes.length} acumuladas).`);
     });
