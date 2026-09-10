@@ -48,15 +48,78 @@
         <span class="logo-text">VARNATIR</span>
       </a>
 
-            <nav class="main-nav" id="main-nav">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="solution.html" class="nav-link">Solución</a>
-        <a href="ia.html" class="nav-link">IA &amp; Soberanía</a>
-        <a href="industries.html" class="nav-link">Industrias</a>
+      <nav class="main-nav" id="main-nav">
+        <!-- 1. SOLUCIÓN (Dropdown) -->
+        <div class="nav-item-dropdown" data-dropdown="solution">
+          <button class="nav-link dropdown-toggle active" aria-expanded="false" aria-haspopup="true">
+            Solución <svg class="dropdown-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="solution.html" class="dropdown-link">
+              <span class="dropdown-link-title">Control de Vuelo en Origen</span>
+              <span class="dropdown-link-desc">Repertorio canónico de 6 formas de intervención</span>
+            </a>
+            <a href="canales.html" class="dropdown-link active">
+              <span class="dropdown-link-title">Canales Soportados</span>
+              <span class="dropdown-link-desc">WhatsApp, Telegram, SMS y salas efímeras</span>
+            </a>
+            <a href="ia.html" class="dropdown-link">
+              <span class="dropdown-link-title">IA &amp; Soberanía de Datos</span>
+              <span class="dropdown-link-desc">Anonimización previa al LLM, Multiplexor y BYOK</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. INDUSTRIAS (Dropdown) -->
+        <div class="nav-item-dropdown" data-dropdown="industries">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Industrias <svg class="dropdown-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="industries-enterprise.html" class="dropdown-link">
+              <span class="dropdown-link-title">Enterprise</span>
+              <span class="dropdown-link-desc">Finanzas, Utilities y Gran Cuenta</span>
+            </a>
+            <a href="industries-govtech.html" class="dropdown-link">
+              <span class="dropdown-link-title">GovTech</span>
+              <span class="dropdown-link-desc">Administración Pública y atención ciudadana</span>
+            </a>
+            <a href="industries-defensa.html" class="dropdown-link">
+              <span class="dropdown-link-title">Defensa &amp; Seguridad</span>
+              <span class="dropdown-link-desc">Ámbitos tácticos y misión crítica</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="industries.html" class="dropdown-link dropdown-link-sub">
+              <span class="dropdown-link-title">Ver todas las Industrias →</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. COMPLIANCE (Direct link) -->
         <a href="compliance.html" class="nav-link">Compliance</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
+
+        <!-- 4. CÁTEDRA (Direct link) -->
         <a href="catedra.html" class="nav-link">Cátedra</a>
-        <a href="become-a-partner.html" class="nav-link">Partners</a>
+
+        <!-- 5. PRICING (Direct link) -->
+        <a href="pricing.html" class="nav-link">Pricing</a>
+
+        <!-- 6. ABOUT US (Dropdown) -->
+        <div class="nav-item-dropdown" data-dropdown="about">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            About Us <svg class="dropdown-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="about.html" class="dropdown-link">
+              <span class="dropdown-link-title">Sobre el Modelo Propio</span>
+              <span class="dropdown-link-desc">Trayectoria de una década de Woztell / Sanuker</span>
+            </a>
+            <a href="become-a-partner.html" class="dropdown-link">
+              <span class="dropdown-link-title">Programa de Partners</span>
+              <span class="dropdown-link-desc">Revenue share, integradores e ISVs</span>
+            </a>
+          </div>
+        </div>
       </nav>
 
       <div class="header-actions">

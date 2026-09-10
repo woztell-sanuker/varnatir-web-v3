@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initMobileMenu();
   initFrameworkTabs();
+  initDropdowns();
 });
 
 /* --------------------------------------------------------------------------
@@ -598,14 +599,27 @@ function initMobileMenu() {
   if (!toggle || !nav) return;
 
   toggle.addEventListener('click', () => {
+    const willOpen = !nav.classList.contains('open');
     nav.classList.toggle('open');
     toggle.classList.toggle('active');
+    if (!willOpen) {
+      nav.querySelectorAll('.nav-item-dropdown').forEach(d => {
+        d.classList.remove('is-open');
+        const toggleBtn = d.querySelector('.dropdown-toggle');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
       nav.classList.remove('open');
       toggle.classList.remove('active');
+      nav.querySelectorAll('.nav-item-dropdown').forEach(d => {
+        d.classList.remove('is-open');
+        const toggleBtn = d.querySelector('.dropdown-toggle');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+      });
 
       const href = link.getAttribute('href');
       if (!href) return;
@@ -677,3 +691,54 @@ function initFrameworkTabs() {
     });
   });
 }
+
+/* --------------------------------------------------------------------------
+   12. Dropdown Component (Variante 2B - V4)
+   -------------------------------------------------------------------------- */
+function initDropdowns() {
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = btn.closest('.nav-item-dropdown');
+      if (!parent) return;
+      const isOpen = parent.classList.contains('is-open');
+      
+      document.querySelectorAll('.nav-item-dropdown').forEach(d => {
+        if (d !== parent) {
+          d.classList.remove('is-open');
+          const toggle = d.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isOpen) {
+        parent.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        parent.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item-dropdown')) {
+      document.querySelectorAll('.nav-item-dropdown').forEach(d => {
+        d.classList.remove('is-open');
+        const toggle = d.querySelector('.dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item-dropdown').forEach(d => {
+        d.classList.remove('is-open');
+        const toggle = d.querySelector('.dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+}
+
